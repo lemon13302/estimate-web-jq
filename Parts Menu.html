@@ -1,0 +1,114 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/smallscreen.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+<div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="overlap">
+    <ul class="sidebar_menu menu vertical">
+        <li>
+            <a href="" class="ripple-effect">
+                <span class="material-icons">alarm</span>&nbsp;عنوان اول
+            </a>
+        </li>
+        <li>
+            <a href="" class="ripple-effect">
+                <span class="material-icons">alarm</span>&nbsp;عنوان اول
+            </a>
+        </li>
+        <li>
+            <a href="" class="ripple-effect">
+                <span class="material-icons">alarm</span>&nbsp;عنوان اول
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- //end sidebar -->
+
+<div class="off-canvas-content " data-off-canvas-content>
+    <div class="header main mb">
+        <div class="top_row ">
+            <div class="row columns ">
+                <ul class="space-between ">
+                    <li>
+                        <a data-toggle="offCanvas">
+                            <i class="material-icons md-24 ">menu</i>
+                        </a>
+                    </li>
+                    <li class="parts head_text "> آرشیو</li>
+                    <li>
+                        <a href="#">
+                            <i class="material-icons md-24 ">arrow_back</i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <!-- parts_menu -->
+    <div class="row columns ">
+        <div class="parts_menu ">
+            <!-- start item -->
+            <a class="item_parts " href="#">
+                <div class="parts_menu_text blue_text text-right float-right ">فاضلاب</div>
+                <img class="img_parts_menu float-left " src="images/Parts-Menu_1.jpg " alt=" ">
+            </a>
+            <!-- end item_parts -->
+            <!-- start item_parts -->
+            <a class="item_parts " href="#">
+                <div class="parts_menu_text redorange_text text-right float-right ">گرمایش
+                    <span class="secendery_text ">(رادیاتور)</span>
+                </div>
+                <img class="img_parts_menu float-left " src="images/Parts-Menu_2.jpg " alt=" ">
+            </a>
+            <!-- end item_parts -->
+            <!-- start item_parts -->
+            <a class="item_parts " href="#">
+                <div class="parts_menu_text greenBlue_text text-right float-right ">آب سرد و گرم</div>
+                <img class="img_parts_menu float-left " src="images/Parts-Menu_3.png " alt=" ">
+            </a>
+            <!-- end item -->
+
+        </div>
+
+
+    </div>
+</div>
+
+<script src="js/jquery.js "></script>
+<script src="js/foundation.min.js "></script>
+<script src="js/owl.carousel.js "></script>
+<script src="js/lightgallery-all.js "></script>
+<script src="js/app.js "></script>
+<script>
+    jQuery(document).ready(function ($) {
+
+        // filter
+        // opening off canvas position right of page
+        $('#ov-pos-r').on('click', function (event) {
+            $('.offcanvas_filter').addClass('is-open-right');
+            $('body').addClass('off-canvas-opened');
+        });
+
+        // closing
+        $('.offcanvas_filter .close-button').on('click', function (event) {
+            $(this).parents('.offcanvas_filter').removeClass('is-open-right');
+            $('body').removeClass('off-canvas-opened');
+        });
+
+
+    });
+</script>
+
+</body>
+
+</html>

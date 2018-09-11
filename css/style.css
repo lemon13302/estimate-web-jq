@@ -1,0 +1,160 @@
+.form_counter {
+    display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	-o-align-items: center;
+    align-items: center;
+    float: left;
+}
+.form_counter button {
+    display: inline;
+    border-radius: 50%;
+    box-shadow: none;
+    padding: 0px 0px 0px 0px;
+    background: #17866d;
+    color: #fff;
+    margin: 0 8px;
+    border: 5px solid transparent;
+    font-size: 1pt;
+}
+.order_number button {
+    display: inline;
+    border-radius: 50%;
+    box-shadow: none;
+    padding: 10px;
+    background: #17866d;
+    color: #fff;
+    margin: 0 10px;
+    font-size: 20pt;
+    border: 5px solid transparent;
+    display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	-o-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	-o-justify-content: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.form_counter #moins {
+    background: #13bb95;
+}
+.order_number button:hover {
+    border: 5px solid #e3e3e3;
+}
+
+.order_number .number_count {
+    border-left: 1px solid #e3e3e3;
+    color: #4c4c4c;
+    margin-left: 20px;
+    font-family: iransans;
+}
+
+.order_number .numbers {
+    box-shadow: none;
+    padding: 10px 15px;
+    border: none;
+    background: transparent;
+    color: #4c4c4c;
+    font-size: 14pt;
+    font-family: iransans;
+}
+
+.order_number .text {
+    white-space: nowrap;
+    font-size: 20pt;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 15px;
+}
+
+.order_number tbody tr:not(:last-child) {
+    border-bottom: 1px solid #e3e3e3 !important;
+}
+
+.order_number #number_count .space-around {
+    float: inline-end !important;
+}
+
+.order_number .number_count .mdi .mdi-minus {
+    color: #fff;
+    font-size: 12pt;
+    position: absolute;
+}
+
+/* large */
+@media screen and (min-width: 64em){
+
+}
+
+/* tablet size */
+@media screen and  (min-width: 768px) and (max-width: 1024px){
+    .order_number .numbers {
+        padding: 5px;
+        font-size: 14pt;
+        width: 33px;
+    }
+}
+
+/* medium phones */
+@media screen and  (min-width: 481px) and (max-width: 767px){
+    .order_number .numbers {
+        padding: 5px;
+        font-size: 14pt;
+        width: 33px;
+    }
+    .order_number .number_count {
+        margin-left: 5px;
+    }
+    .order_number .text {
+        font-size: 13pt !important;
+        margin-top: 0px;
+    }
+    .form_counter button {
+        margin: 0 5px;
+    }
+    .order_number button {
+        padding: 3px;
+    }
+}
+
+/* small phones */
+@media screen and  (min-width: 300px) and (max-width: 480px){
+    .order_number .numbers {
+        padding: 5px;
+        font-size: 14pt;
+        width: 33px;
+    }
+    .order_number .number_count {
+        margin-left: 5px;
+    }
+    .order_number .text {
+        font-size: 10pt !important;
+        margin-top: 0px;
+    }
+    .form_counter button {
+        margin: 0 3px;
+    }
+    .order_number button {
+        padding: 0;
+    }
+}
+
+.order_number .text i {
+    margin: 0 0 0 5px;
+    color: #333;
+}
