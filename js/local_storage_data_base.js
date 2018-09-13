@@ -35,21 +35,23 @@ function DBM(pro_title) {
     this.read();
 }
 
-var project = {
-    id: null,
-    name: "",
-    date: "",
-    general: {},
-    sewage_req: {},
-    water_req: {},
-    package_req: {},
-    brand_sewage: "",
-    brand_package: "",
-    brand_water: "",
-    sewage_res: {},
-    package_res: {},
-    water_res: {},
-    sewage_fact: {},
-    water_fact: {},
-    brand_fact: {}
+var Project = function () {
+    this.id = null;
+    this.name = "";
+    this.date = "";
+    this.type = "";
+    this.general = {},
+        this.sewage_req = {};
+    this.water_req = {};
+    this.package_req = {};
+    this.brand_sewage = "";
+    this.brand_package = "";
+    this.brand_water = "";
+    this.sewage_res = {};
+    this.package_res = {};
+    this.water_res = {};
+    this.sewage_fact = {};
+    this.water_fact = {};
+    this.brand_fact = {}
+
 };

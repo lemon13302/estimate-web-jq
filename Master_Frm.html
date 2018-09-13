@@ -114,49 +114,41 @@
                 <ul class="tabs menu expanded text-center ovh" data-active-collapse="true" data-tabs
                     id="collapsing-tabs">
                     <li class="tabs-title is-active">
-                        <a href="#panel1c" aria-selected="true"> مسکونی</a>
+                        <a href="#panel1c" aria-selected="true" data-id="مسکونی"> مسکونی</a>
                     </li>
                     <li class="tabs-title">
-                        <a href="#panel2c"> تجاری</a>
+                        <a href="#panel2c" data-id="تجاری"> تجاری</a>
                     </li>
                     <li class="tabs-title">
-                        <a href="#panel3c">اداری </a>
+                        <a href="#panel3c" data-id="اداری">اداری </a>
                     </li>
                 </ul>
 
-                <div class="tabs-content" data-tabs-content="collapsing-tabs">
-                    <div class="tabs-panel is-active" id="panel1c">
+                <div class="tabs-panel is-active manage_create_form" id="panel1c">
 
-                        <div class="callout alert small alertboxall" style="display:none">
-                            <p class="alertbox"></p>
-                        </div>
+                    <div class="callout alert small alertboxall" style="display:none">
+                        <p class="alertbox"></p>
+                    </div>
 
-                        <div class="form_control">
-                            <input class="create_project_input" id="project_name" type="text" placeholder="نام پروژه">
+                    <div class="form_control">
+                        <input class="create_project_input" id="project_name" type="text" placeholder="نام پروژه">
+                    </div>
+                    <div class="form_control mb">
+                        <input class="create_project_input datepicker" id="date_project" type="text"
+                               placeholder="تاریخ شروع پروژه">
+                        <div class="text-left">
+                            <span dir="ltr">1397/5/6 </span>
                         </div>
-                        <div class="form_control mb">
-                            <input class="create_project_input datepicker" id="date_project" type="text"
-                                   placeholder="تاریخ شروع پروژه">
-                            <div class="text-left">
-                                <span dir="ltr">1397/5/6 </span>
-                            </div>
-                            <i class="material-icons md-18">event</i>
-                        </div>
-                        <div class="button-group expanded ">
-                            <a class="button  " id="success">
-                                <span>ثبت و ادامه</span>
-                                <i class="material-icons md-18">arrow_back_ios</i>
-                            </a>
-                            <a class="button outline slideup">انصراف</a>
-                        </div>
+                        <i class="material-icons md-18">event</i>
+                    </div>
+                    <div class="button-group expanded ">
+                        <a class="button  " id="success">
+                            <span>ثبت و ادامه</span>
+                            <i class="material-icons md-18">arrow_back_ios</i>
+                        </a>
+                        <a class="button outline slideup">انصراف</a>
+                    </div>
 
-                    </div>
-                    <div class="tabs-panel" id="panel2c">
-                        تب 2
-                    </div>
-                    <div class="tabs-panel" id="panel3c">
-                        تب 3
-                    </div>
                 </div>
             </div>
             <!-- end tabs -->
@@ -165,25 +157,15 @@
         <!-- //end content -->
 
     </div>
-    <script src="js/jquery.js"></script>
+    <!--<script src="js/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="js/owl.carousel.js"></script>
     <script src="js/persian-date.min.js"></script>
     <script src="js/persian-datepicker.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js"></script>-->
 
-    <script>
-        $(document).ready(function () {
-            $('.datepicker').persianDatepicker({
-                altFormat: 'LLLL',
-                initialValue: false,
-                observer: true,
-                format: 'YYYY/MM/DD',
-                position: "0 0"
-            });
-        });
-    </script>
 </div>
+
 
 <!--General Form-->
 <div class="off-canvas-content mobile_wrapper" id="general_form" data-off-canvas-content style="display:none">
@@ -662,7 +644,6 @@
 
 
 <!--Archive Form-->
-
 <div class="off-canvas-content mobile_wrapper" id="Archive_form" data-off-canvas-content style="display:none">
 
     <div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="overlap">
@@ -671,7 +652,6 @@
         </button>
     </div>
     <!-- //end sidebar -->
-
     <div class="off-canvas-content" data-off-canvas-content>
         <div class="header main">
             <div class="top_row">
@@ -747,21 +727,25 @@
 
         </div>
     </div>
-    <script src="js/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/owl.carousel.js"></script>
-    <script src="js/lightgallery-all.js"></script>
-    <script src="js/app.js"></script>
-
-
 </div>
 
+<!--Modal Section-->
+<div class="tiny reveal mb" id="modal_warning" data-reveal>
+    <div class="red_text mb">اخطار</div>
+    <div class="mb warning_text_revael">
+        <p class="title_error"></p>
+    </div>
+    <div class="close-button-text" data-close aria-label="Close reveal" type="button">
+            <span aria-hidden="true">
+          تایید
+            </span>
+    </div>
+</div>
 <!-- //end sidebar -->
 <script src="js/jquery.js"></script>
 <script src="js/foundation.min.js"></script>
 <script src="js/owl.carousel.js"></script>
 <script src="js/lightgallery-all.js"></script>
-<script src="js/app.js"></script>
 <script src="js/jquery.js"></script>
 <script src="js/foundation.min.js"></script>
 <script src="js/owl.carousel.js"></script>
@@ -770,6 +754,8 @@
 <script src="js/app.js"></script>
 <script src="js/local_storage_data_base.js"></script>
 <script>
+    window.project = new Project;
+    window.db = new DBM("App");
     $(document).ready(function () {
         var main_mennu = $('#main_menu');
         var create_project = $('#create_project');
@@ -781,7 +767,7 @@
         $('#main_menu #greens').on('click', function () {
             main_mennu.slideUp();
             create_project.slideDown();
-        })
+        });
         $('.slideup').on('click', function () {
             main_mennu.slideDown();
             create_project.slideUp();
@@ -808,29 +794,49 @@
         });
 
         $('#success').on('click', function () {
-
             var project_name = $('#project_name');
             var date_project = $('#date_project');
-
             if (project_name.val() == '') {
-                $('.alertbox').text('لطفا نام پروژه را وارد کنید');
-                $('.alertboxall').slideDown();
-
+                /* $('.alertbox').text('لطفا نام پروژه را وارد کنید');
+                 $('.alertboxall').slideDown();*/
+                $('#modal_warning .title_error').text("نام پروژه را وارد نمایید");
+                $('#modal_warning').foundation('open');
+                return;
             }
             if (date_project.val() == '') {
-                $('.alertbox').text('لطفا تاریخ پروژه را وارد کنید');
-                $('.alertboxall').slideDown();
+                $('#modal_warning .title_error').text("تاریخ پروژه را وارد نمایید");
+                $('#modal_warning').foundation('open');
+                return;
             }
-
             if (project_name.val() !== '' && date_project.val() !== '') {
-                $('.alertboxall').slideUp();
-                general_form.slideDown();
-                create_project.slideUp();
+
+                db.add(window.project);
+                general_form.fadeIn();
+                create_project.fadeOut();
+
             }
         });
-
-        $('#success').on('click', function () {
-
+        //Date Picker Section
+        $(document).ready(function () {
+            $('.datepicker').persianDatepicker({
+                altFormat: 'LLLL',
+                initialValue: false,
+                observer: true,
+                format: 'YYYY/MM/DD',
+                position: "0 0",
+                onSelect: function () {
+                    window.project.date = $('#date_project').val();
+                }
+            });
+        });
+        // On change IN tb
+        $('#project_name').on('change', function () {
+            window.project.name = this.value;
+        });
+        $('#collapsing-tabs li a').on('click', function () {
+            var selection = $(this).attr('data-id');
+            window.project.type = selection;
+            /* console.log(window.project.type);*/
         })
     });
 </script>
