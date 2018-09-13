@@ -34,3 +34,22 @@ function DBM(pro_title) {
     //-------------------------
     this.read();
 }
+
+var project = {
+    id: null,
+    name: "",
+    date: "",
+    general: {},
+    sewage_req: {},
+    water_req: {},
+    package_req: {},
+    brand_sewage: "",
+    brand_package: "",
+    brand_water: "",
+    sewage_res: {},
+    package_res: {},
+    water_res: {},
+    sewage_fact: {},
+    water_fact: {},
+    brand_fact: {}
+};
