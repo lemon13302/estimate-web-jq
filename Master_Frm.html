@@ -7,29 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/materialdesignicons.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/smallscreen.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/persian-datepicker.min.css">
-
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/smallscreen.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-<!--Navigation-->
-<!--<div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="overlap">
-    <button class="close-button" aria-label="Close alert" type="button" data-close>
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>-->
 <!--Main Menu Section-->
 <div class="off-canvas-content" id="main_menu" data-off-canvas-content>
     <!-- content -->
@@ -157,12 +143,7 @@
         <!-- //end content -->
 
     </div>
-    <!--<script src="js/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/owl.carousel.js"></script>
-    <script src="js/persian-date.min.js"></script>
-    <script src="js/persian-datepicker.js"></script>
-    <script src="js/app.js"></script>-->
+
 
 </div>
 
@@ -218,14 +199,16 @@
                 <!-- one -->
                 <tr>
                     <td class="">
-                        <span class="text-right text">تعداد‌طبقات</span>
+                        <span class="text-right text">تعداد‌طبقات مسکونی</span>
                     </td>
                     <td>
                         <div id="number_count space-around">
                             <div class="form_counter">
                                     <span class="text-left number_count">
-                                        <input type="submit" size="25" value="1" class="numbers result">
+                                        <input type="text" size="3" value="1" class="numbers result"
+                                               id="number_of_floors">
                                     </span>
+
                                 <button class="plus" id="plus">
                                     <i class="material-icons">add</i>
                                 </button>
@@ -239,13 +222,14 @@
                 <!-- two -->
                 <tr>
                     <td class="">
-                        <span class="text-right text">تعدادواحد</span>
+                        <span class="text-right text">تعدادواحد در هر طبقه</span>
                     </td>
                     <td>
                         <div id="number_count space-around">
                             <div class="form_counter">
                                     <span class="text-left number_count">
-                                        <input type="submit" size="25" value="1" class="numbers result">
+                                        <input type="text" size="3" value="1" class="numbers result"
+                                               id="number_of_unit">
                                     </span>
                                 <button class="plus" id="plus">
                                     <i class="material-icons">add</i>
@@ -261,13 +245,14 @@
                 <!-- three -->
                 <tr>
                     <td class="">
-                        <span class="text-right text"> تعدادواحد در طبقه</span>
+                        <span class="text-right text"> تعدادکل واحدها</span>
                     </td>
                     <td>
                         <div id="number_count space-around">
                             <div class="form_counter">
                                     <span class="text-left number_count">
-                                        <input type="submit" size="25" value="1" class="numbers result">
+                                        <input type="text" size="3" value="1" class="numbers result"
+                                               id="total_number_of_unit">
                                     </span>
                                 <button class="plus" id="plus">
                                     <i class="material-icons">add</i>
@@ -283,13 +268,14 @@
                 <!-- four -->
                 <tr>
                     <td class="">
-                        <span class="text-right text">تعداد طبقات </span>
+                        <span class="text-right text">تعداد طبقات پارکینگ </span>
                     </td>
                     <td>
                         <div id="number_count space-around">
                             <div class="form_counter">
                                     <span class="text-left number_count">
-                                        <input type="submit" size="25" value="1" class="numbers result">
+                                        <input type="text" size="3" value="1" class="numbers result"
+                                               id="number_of_parking">
                                     </span>
                                 <button class="plus" id="plus">
                                     <i class="material-icons">add</i>
@@ -297,59 +283,15 @@
                                 <button class="minus" id="moins">
                                     <i class="material-icons">remove</i>
                                 </button>
-
                             </div>
                         </div>
                     </td>
                 </tr>
                 <!-- five -->
-                <tr>
-                    <td class="">
-                        <span class="text-right text">تعدادواحد</span>
-                    </td>
-                    <td>
-                        <div id="number_count space-around">
-                            <div class="form_counter">
-                                    <span class="text-left number_count">
-                                        <input type="submit" size="25" value="1" class="numbers result">
-                                    </span>
-                                <button class="plus" id="plus">
-                                    <i class="material-icons">add</i>
-                                </button>
-                                <button class="minus" id="moins">
-                                    <i class="material-icons">remove</i>
-                                </button>
-
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <!-- six -->
-                <tr>
-                    <td class="">
-                        <span class="text-right text">تعدادواحد</span>
-                    </td>
-                    <td>
-                        <div id="number_count space-around">
-                            <div class="form_counter">
-                                    <span class="text-left number_count">
-                                        <input type="submit" size="25" value="1" class="numbers result">
-                                    </span>
-                                <button class="plus" id="plus">
-                                    <i class="material-icons">add</i>
-                                </button>
-                                <button class="minus" id="moins">
-                                    <i class="material-icons">remove</i>
-                                </button>
-
-                            </div>
-                        </div>
-                    </td>
-                </tr>
                 </tbody>
             </table>
             <div class="large-10 float-center">
-                <button class="button expanded part_menu_open" aria-controls="exampleModal5">
+                <button class="button expanded part_menu_open" aria-controls="exampleModal5" id="success_general">
                     <span>ثبت و ادامه</span>
                     <i class="material-icons md-18">arrow_back_ios</i>
                 </button>
@@ -370,45 +312,11 @@
             </span>
         </div>
     </div>
-
-    <script src="js/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/owl.carousel.js"></script>
-    <script src="js/lightgallery-all.js"></script>
-    <script src="js/app.js"></script>
-    <script>
-        jQuery(document).ready(function ($) {
-            //  add value
-            $(".form_counter .plus").on('click', function (event) {
-                var el = $(this);
-                var parent = $(this).parents(".form_counter");
-                var result = parent.find("input.result").val();
-                result++;
-                parent.find("input.result").val(result);
-            });
-            //  mines value
-            $(".form_counter .minus").on('click', function (event) {
-                var el = $(this);
-                var parent = $(this).parents(".form_counter");
-                var result = parent.find("input.result").val();
-                if (result > 0) {
-
-                    result--;
-                    parent.find("input.result").val(result);
-                }
-            });
-            $('.menu_open_close').click(function () {
-                $('.menu_genral_frm').removeClass('is-closed');
-                $('.menu_genral_frm').toggleClass('is-open');
-            });
-        });
-    </script>
-
 </div>
 
 
 <!--Fazelab Form -->
-<div class="off-canvas-content mobile_wrapper" id="fazelab_form" data-off-canvas-content style="display:none">
+<div class="off-canvas-content mobile_wrapper" data-off-canvas-content id="fazelab_form" style="display: none;">
     <div class="page_bottomBar">
         <div class="header main">
             <div class="top_row">
@@ -421,8 +329,8 @@
                         </li>
                         <li class="parts head_text">پروژه الهیه</li>
                         <li>
-                            <a>
-                                <i class="material-icons md-24 ">arrow_back</i>
+                            <a href="">
+                                <i class="material-icons md-24" id="fazelab_back">arrow_back</i>
                             </a>
                         </li>
                     </ul>
@@ -540,6 +448,138 @@
     </div>
 
 </div>
+<!--<div class="off-canvas-content mobile_wrapper" id="fazelab_form" data-off-canvas-content style="display:none">
+    <div class="page_bottomBar">
+        <div class="header main">
+            <div class="top_row">
+                <div class="row columns">
+                    <ul class="space-between">
+                        <li>
+                            <a href="">
+                                <i class="material-icons md-24">menu</i>
+                            </a>
+                        </li>
+                        <li class="parts head_text">پروژه الهیه</li>
+                        <li>
+                            <a>
+                                <i class="material-icons md-24 ">arrow_back</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        &lt;!&ndash;  &ndash;&gt;
+        <div class="row columns mb fazelab_page">
+            <div class="center_wrapper mb inline">
+                <div class="flex_main_menu mb">
+                    <div class="">
+                        <img class="" src="images/right.jpg" alt="">
+                    </div>
+                    <div class="">
+                        <div class="titr_fazelab"> فرم فاضلاب</div>
+                    </div>
+                    <div class=" ">
+                        <img class="" src="images/left.jpg" alt="">
+                    </div>
+                </div>
+                <div class=" mb">
+                    &lt;!&ndash; tabs &ndash;&gt;
+                    <ul id="selectForm_tabs" data-tabs class="owl-carousel slider-tab-menu">
+                        <li class="tabs-title is-active">
+                            <a href="#panel1c"> آشپزخانه</a>
+                        </li>
+                        <li class="tabs-title">
+                            <a href="#panel2c"> تراس</a>
+                        </li>
+                        <li class="tabs-title">
+                            <a href="#panel3c">متن تستی </a>
+                        </li>
+                        <li class="tabs-title">
+                            <a href="#panel4c">متن تستی </a>
+                        </li>
+                        <li class="tabs-title">
+                            <a href="#panel5c">متن تستی </a>
+                        </li>
+                    </ul>
+                </div>
+                &lt;!&ndash; inputs &ndash;&gt;
+                <div class="tabs-content " data-tabs-content="selectForm_tabs">
+                    <div class="tabs-panel is-active" id="panel1c">
+                        <div class="row columns center_wrapper">
+                            <div class="large-10 float-center">
+                                <div class="custom_select">
+                                    <div class="text">سایز سیفون:</div>
+                                    <div class="custom-select">
+                                        <select>
+                                            <option value="">90</option>
+                                            <option value="">90</option>
+                                            <option value="">90</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-6 columns">
+                                        <div class="custom_select">
+                                            <div class="text">سایز سیفون:</div>
+                                            <div class="custom-select">
+                                                <select>
+                                                    <option value="">90</option>
+                                                    <option value="">90</option>
+                                                    <option value="">90</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="small-6 columns">
+                                        <div class="custom_select">
+                                            <div class="text">سایز سیفون:</div>
+                                            <div class="custom-select">
+                                                <select>
+                                                    <option value="">90</option>
+                                                    <option value="">90</option>
+                                                    <option value="">90</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form_control">
+                                    <input type="text" placeholder="سایز رایز ونت">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs-panel" id="panel2c">
+                        تب دوم
+                    </div>
+                    <div class="tabs-panel" id="panel3c">
+                        تب سوم
+                    </div>
+                    <div class="tabs-panel" id="panel4c">
+                        تب چهارم
+                    </div>
+                    <div class="tabs-panel" id="panel5c">
+                        تب پنجم
+                    </div>
+                </div>
+                &lt;!&ndash; // end &ndash;&gt;
+
+            </div>
+
+
+        </div>
+        &lt;!&ndash;  &ndash;&gt;
+        <div class="menu_bottom_bar">
+            <a href="" class="btn">تایید</a>
+        </div>
+    </div>
+
+</div>-->
 
 
 <!--part_menu-->
@@ -578,7 +618,7 @@
                         <li class="parts head_text "> آرشیو</li>
                         <li>
                             <a href="#">
-                                <i class="material-icons md-24 ">arrow_back</i>
+                                <i class="material-icons md-24" id="back_general">arrow_back</i>
                             </a>
                         </li>
                     </ul>
@@ -641,7 +681,6 @@
         });
     </script>
 </div>
-
 
 <!--Archive Form-->
 <div class="off-canvas-content mobile_wrapper" id="Archive_form" data-off-canvas-content style="display:none">
@@ -746,7 +785,6 @@
 <script src="js/foundation.min.js"></script>
 <script src="js/owl.carousel.js"></script>
 <script src="js/lightgallery-all.js"></script>
-<script src="js/jquery.js"></script>
 <script src="js/foundation.min.js"></script>
 <script src="js/owl.carousel.js"></script>
 <script src="js/persian-date.min.js"></script>
@@ -775,7 +813,7 @@
         $('#main_menu #blue').on('click', function () {
             main_mennu.slideUp();
             Archive_form.slideDown();
-        })
+        });
         $('.white_menu_top').on('click', function () {
             main_mennu.slideDown();
             Archive_form.slideUp();
@@ -784,7 +822,41 @@
             create_project.slideDown();
             general_form.slideUp();
         });
+        $('#back_general').on('click', function () {
+            part_menu_form.slideUp();
+            general_form.slideDown();
+        });
+        $('#fazelab_back').on('click', function () {
+            fazelab_form.fadeOut();
+            part_menu_form.fadeIn();
+        });
         $('.part_menu_open').on('click', function () {
+            var floors = $('#number_of_floors').val();
+            var unit = $('#number_of_unit').val();
+            var total_unit = $('#total_number_of_unit').val();
+            var parking = $('#number_of_parking').val();
+            if (floors > 50 || floors < 1) {
+                $('#modal_warning .title_error').text("تعداد طبقات مسکونی باید بین 1 تا 50 باشد");
+                $('#modal_warning').foundation('open');
+                return;
+            }
+            if (unit > 20 || unit < 1) {
+                $('#modal_warning .title_error').text("تعداد واحد در هرطبقه باید بین 1 تا 20 باشد");
+                $('#modal_warning').foundation('open');
+                return;
+            }
+            if (total_unit < floors * unit) {
+                $('#modal_warning .title_error').text("تعداد کل واحدها از تعداد حاصلضرب طبقات در واحد در طبقه(" + (floors * unit) + ") نمی تواند کمتر باشد");
+                $('#modal_warning').foundation('open');
+                return;
+            }
+            if (parking > 3 || parking < 0) {
+                $('#modal_warning .title_error').text("تعداد طبقات پارکینگ باید بین 0 تا 3 باشد");
+                $('#modal_warning').foundation('open');
+                return;
+            }
+            project.general = {floor: floors, parkingFloor: parking, unitInFloor: unit, unitTotal: total_unit};
+            db.update(project);
             general_form.slideUp();
             part_menu_form.slideDown();
         });
@@ -792,7 +864,7 @@
             part_menu_form.slideUp();
             fazelab_form.slideDown();
         });
-
+        // Create Project
         $('#success').on('click', function () {
             var project_name = $('#project_name');
             var date_project = $('#date_project');
@@ -809,13 +881,12 @@
                 return;
             }
             if (project_name.val() !== '' && date_project.val() !== '') {
-
                 db.add(window.project);
                 general_form.fadeIn();
                 create_project.fadeOut();
-
             }
         });
+
         //Date Picker Section
         $(document).ready(function () {
             $('.datepicker').persianDatepicker({
@@ -838,8 +909,32 @@
             window.project.type = selection;
             /* console.log(window.project.type);*/
         })
+        //  add value
+        $(".form_counter .plus").on('click', function (event) {
+            var el = $(this);
+            var parent = $(this).parents(".form_counter");
+            var result = parent.find("input.result").val();
+            result++;
+            parent.find("input.result").val(result);
+        });
+        //  mines value
+        $(".form_counter .minus").on('click', function (event) {
+            var el = $(this);
+            var parent = $(this).parents(".form_counter");
+            var result = parent.find("input.result").val();
+            if (result > 0) {
+
+                result--;
+                parent.find("input.result").val(result);
+            }
+        });
+        $('.menu_open_close').click(function () {
+            $('.menu_genral_frm').removeClass('is-closed');
+            $('.menu_genral_frm').toggleClass('is-open');
+        });
     });
 </script>
+
 
 </body>
 </html>
