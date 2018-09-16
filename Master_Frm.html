@@ -13,9 +13,7 @@
     <link rel="stylesheet" href="css/persian-datepicker.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
 <!--Main Menu Section-->
 <div class="off-canvas-content" id="main_menu" data-off-canvas-content>
@@ -79,7 +77,6 @@
         <!-- //end content -->
     </div>
 </div>
-
 <!--Create Project-->
 <div class="off-canvas-content" id="create_project" data-off-canvas-content style="display:none">
     <div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="overlap">
@@ -147,8 +144,6 @@
 
 
 </div>
-
-
 <!--General Form-->
 <div class="off-canvas-content mobile_wrapper" id="general_form" data-off-canvas-content style="display:none">
     <div class="off-canvas position-right menu_genral_frm" id="offCanvas" data-off-canvas data-transition="overlap">
@@ -314,10 +309,7 @@
         </div>
     </div>
 </div>
-
-
 <!--Fazelab Form -->
-
 <div class="off-canvas-content mobile_wrapper" id="fazelab_form" style="display: none;" data-off-canvas-content>
     <div class="page_bottomBar">
         <div class="header main">
@@ -358,47 +350,194 @@
                     <!-- tabs -->
                     <ul id="selectForm_tabs" data-tabs class="owl-carousel slider-tab-menu">
                         <li class="tabs-title is-active">
-                            <a href="#panel1c"> آشپزخانه</a>
+                            <a href="#panel1c">توالت</a>
                         </li>
                         <li class="tabs-title">
-                            <a href="#panel2c"> تراس</a>
+                            <a href="#panel2c">حمام</a>
                         </li>
                         <li class="tabs-title">
-                            <a href="#panel3c">متن تستی </a>
+                            <a href="#panel3c">آشپزخانه</a>
                         </li>
                         <li class="tabs-title">
-                            <a href="#panel4c">متن تستی </a>
+                            <a href="#panel4c">تراس</a>
                         </li>
                         <li class="tabs-title">
-                            <a href="#panel5c">متن تستی </a>
+                            <a href="#panel5c">آب باران</a>
+                        </li>
+                        <li class="tabs-title">
+                            <a href="#panel6c">مشترک</a>
                         </li>
                     </ul>
                 </div>
                 <!-- inputs -->
-                <div class="tabs-content " data-tabs-content="selectForm_tabs">
+                <div class="tabs-content" data-tabs-content="selectForm_tabs">
                     <div class="tabs-panel is-active" id="panel1c">
                         <div class="row columns center_wrapper">
                             <div class="large-10 float-center">
+                                <div class="form_control">
+                                    <input type="text" id="count_rizer_to" placeholder="تعداد رایزر">
+                                </div>
+                                <div class="form_control">
+                                    <input type="text" id="size_rizer_to" placeholder="سایز رایزر" value="110" readonly>
+                                </div>
+                                <div class="row">
+                                    <div class="small-6 columns">
+                                        <div class="custom_select">
+                                            <div class="text">سایز کفشور:</div>
+                                            <div class="custom-select">
+                                                <select id="select_Shoor">
+                                                    <option value="63">63</option>
+                                                    <option value="90">90</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="small-6 columns">
+                                        <div class="custom_select">
+                                            <div class="text">سایز رایز ونت:</div>
+                                            <div class="custom-select">
+                                                <select id="size_rize_to">
+                                                    <option value="63">63</option>
+                                                    <option value="90">90</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <div class="custom_select">
+                                            <div class="text">فرنگی:</div>
+                                            <div class="custom-select">
+                                                <select id="farangy_to">
+                                                    <option value="">دارد</option>
+                                                    <option value="">ندارد</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs-panel " id="panel2c">
+                        <div class="row columns center_wrapper">
+                            <div class="large-10 float-center">
+                                <div class="form_control">
+                                    <input type="text" id="count_rizer_in_hamam" placeholder="تعداد رایز">
+                                </div>
+                                <div class="row">
+                                    <div class="small-6 columns">
+                                        <div class="custom_select">
+                                            <div class="text">سایز رایزر:</div>
+                                            <div class="custom-select">
+                                                <select id="rizer_size_hamam">
+                                                    <option value="90">90</option>
+                                                    <option value="110">110</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="small-6 columns">
+                                        <div class="custom_select">
+                                            <div class="text">سایز سیفون:</div>
+                                            <div class="custom-select">
+                                                <select id="siphon_size_hamam">
+                                                    <option value="63">63</option>
+                                                    <option value="90">90</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <div class="custom_select">
+                                            <div class="text">سایز رایزر ونت:</div>
+                                            <div class="custom-select">
+                                                <select id="rize_vant_size_hamam">
+                                                    <option value="63">63</option>
+                                                    <option value="90">90</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <div class="custom_select">
+                                            <div class="text">فرنگی:</div>
+                                            <div class="custom-select">
+                                                <select id="farangy_hamam">
+                                                    <option value="">دارد</option>
+                                                    <option value="">ندارد</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs-panel" id="panel3c">
+                        <div class="row columns center_wrapper">
+                            <div class="large-10 float-center">
+                                <div class="form_control">
+                                    <input type="text" id="rizer_count_kitchen" placeholder="تعداد رایزر">
+                                </div>
                                 <div class="custom_select">
-                                    <div class="text">سایز سیفون:</div>
+                                    <div class="text">سایز رایزر:</div>
                                     <div class="custom-select">
-                                        <select>
+                                        <select id="rizer_size_kitchen">
                                             <option value="">90</option>
-                                            <option value="">90</option>
-                                            <option value="">90</option>
+                                            <option value="">110</option>
                                         </select>
                                     </div>
                                 </div>
-
                                 <div class="row">
                                     <div class="small-6 columns">
                                         <div class="custom_select">
                                             <div class="text">سایز سیفون:</div>
                                             <div class="custom-select">
-                                                <select>
+                                                <select id="rizer_size_siphon_kitchen">
+                                                    <option value="">63</option>
                                                     <option value="">90</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="small-6 columns">
+                                        <div class="custom_select">
+                                            <div class="text">سایز رایز ونت:</div>
+                                            <div class="custom-select">
+                                                <select id="rizer_size_vant_kitchen">
+                                                    <option value="">63</option>
                                                     <option value="">90</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs-panel" id="panel4c">
+                        <div class="row columns center_wrapper">
+                            <div class="large-10 float-center">
+                                <div class="form_control">
+                                    <input type="text" id="rizer_count_terrace" placeholder="تعداد رایز">
+                                </div>
+                                <div class="row">
+                                    <div class="small-6 columns">
+                                        <div class="custom_select">
+                                            <div class="text">سایز رایزر:</div>
+                                            <div class="custom-select">
+                                                <select id="rizer_size_terrace">
+                                                    <option value="">63</option>
                                                     <option value="">90</option>
+                                                    <option value="">110</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -407,51 +546,68 @@
                                         <div class="custom_select">
                                             <div class="text">سایز سیفون:</div>
                                             <div class="custom-select">
-                                                <select>
-                                                    <option value="">90</option>
-                                                    <option value="">90</option>
+                                                <select id="siphon_size_terrace">
+                                                    <option value="">63</option>
                                                     <option value="">90</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="form_control">
-                                    <input type="text" placeholder="سایز رایز ونت">
-                                </div>
-
                             </div>
                         </div>
                     </div>
-                    <div class="tabs-panel" id="panel2c">
-                        تب دوم
-                    </div>
-                    <div class="tabs-panel" id="panel3c">
-                        تب سوم
-                    </div>
-                    <div class="tabs-panel" id="panel4c">
-                        تب چهارم
-                    </div>
                     <div class="tabs-panel" id="panel5c">
-                        تب پنجم
+                        <div class="row columns center_wrapper">
+                            <div class="large-10 float-center">
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <div class="form_control">
+                                            <input type="text" id="count_rizer_water" placeholder="تعداد رایزر">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <div class="custom_select">
+                                            <div class="text">سایز رایزر:</div>
+                                            <div class="custom-select">
+                                                <select id="rizer_size_water">
+                                                    <option value="">90</option>
+                                                    <option value="">110</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs-panel" id="panel6c">
+                        <div class="row columns center_wrapper">
+                            <div class="large-10 float-center">
+                                <div class="row">
+                                    <div class="form_control">
+                                        <input type="text" id="count_line_bazdyd" placeholder="تعداد خط بازدید">
+                                    </div>
+                                    <div class="form_control">
+                                        <input type="text" id="count_line_mofe" placeholder="تعداد خط موفه">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- // end -->
-
             </div>
-
-
         </div>
         <!--  -->
         <div class="menu_bottom_bar">
-            <a href="" class="btn">تایید</a>
+            <a href="" class="btn success_fazelab">تایید</a>
         </div>
     </div>
 
 </div>
-
-
 <!--part_menu-->
 <div class="off-canvas-content mobile_wrapper" id="part_menu_form" data-off-canvas-content style="display:none">
     <div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="overlap">
@@ -525,33 +681,7 @@
 
         </div>
     </div>
-
-    <script src="js/jquery.js "></script>
-    <script src="js/foundation.min.js "></script>
-    <script src="js/owl.carousel.js "></script>
-    <script src="js/lightgallery-all.js "></script>
-    <script src="js/app.js "></script>
-    <script>
-        jQuery(document).ready(function ($) {
-
-            // filter
-            // opening off canvas position right of page
-            $('#ov-pos-r').on('click', function (event) {
-                $('.offcanvas_filter').addClass('is-open-right');
-                $('body').addClass('off-canvas-opened');
-            });
-
-            // closing
-            $('.offcanvas_filter .close-button').on('click', function (event) {
-                $(this).parents('.offcanvas_filter').removeClass('is-open-right');
-                $('body').removeClass('off-canvas-opened');
-            });
-
-
-        });
-    </script>
 </div>
-
 <!--Archive Form-->
 <div class="off-canvas-content mobile_wrapper" id="Archive_form" data-off-canvas-content style="display:none">
 
@@ -637,7 +767,6 @@
         </div>
     </div>
 </div>
-
 <!--Modal Section-->
 <div class="tiny reveal mb" id="modal_warning" data-reveal>
     <div class="red_text mb">اخطار</div>
@@ -658,7 +787,9 @@
 <script src="js/owl.carousel.js"></script>
 <script src="js/persian-date.min.js"></script>
 <script src="js/persian-datepicker.js"></script>
+<script src="js/app.js"></script>
 <script src="js/local_storage_data_base.js"></script>
+
 <script>
     window.project = new Project;
     window.db = new DBM("App");
@@ -669,6 +800,45 @@
         var fazelab_form = $('#fazelab_form');
         var Archive_form = $('#Archive_form');
         var part_menu_form = $('#part_menu_form');
+
+        $('.success_fazelab').on('click', function (e) {
+            e.preventDefault();
+            //Tovalet Validation Section
+            $('#count_rizer_to').val();
+            $('#size_rizer_to').val();
+            $('#select_Shoor option:selected').text();
+            $('#size_rize_to option:selected').text();
+            $('#farangy_to option:selected').text();
+            //Hmam Validation Section
+            $('#count_rizer_in_hamam').val();
+            $('#rizer_size_hamam option:selected').text();
+            $('#siphon_size_hamam option:selected').text();
+            $('#rize_vant_size_hamam option:selected').text();
+            $('#farangy_hamam option:selected').text();
+
+            //Ashpazkhane Validation Section
+            $('#rizer_count_kitchen').val();
+            $('#rizer_size_kitchen option:selected').text();
+            $('#rizer_size_siphon_kitchen option:selected').text();
+            $('#rizer_size_vant_kitchen option:selected').text();
+
+            //Teras Validation Section
+            $('#rizer_count_terrace').val();
+            $('#rizer_size_terrace option:selected').text();
+            $('#siphon_size_terrace option:selected').text();
+
+            // Baran Validation Section
+            $('#count_rizer_water option:selected').text();
+            $('#rizer_size_water option:selected').text();
+
+            // Common Validation Section
+            $('#count_line_bazdyd').val();
+            $('#count_line_mofe').val();
+        });
+        $('.yellow').on('click', function () {
+            main_mennu.slideUp();
+            fazelab_form.slideDown();
+        });
 
         $('#main_menu #greens').on('click', function () {
             main_mennu.slideUp();
@@ -799,6 +969,19 @@
         $('.menu_open_close').click(function () {
             $('.menu_genral_frm').removeClass('is-closed');
             $('.menu_genral_frm').toggleClass('is-open');
+        });
+
+
+        // filter
+        // opening off canvas position right of page
+        $('#ov-pos-r').on('click', function (event) {
+            $('.offcanvas_filter').addClass('is-open-right');
+            $('body').addClass('off-canvas-opened');
+        });
+        // closing
+        $('.offcanvas_filter .close-button').on('click', function (event) {
+            $(this).parents('.offcanvas_filter').removeClass('is-open-right');
+            $('body').removeClass('off-canvas-opened');
         });
     });
 </script>
