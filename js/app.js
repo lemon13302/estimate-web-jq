@@ -1,11 +1,12 @@
 $(document).foundation();
 $("#selectForm_tabs").owlCarousel({
     rtl: true,
-    loop: false,
+    loop: true,
+    center: true,
     margin: 20,
     nav: false,
     dots: false,
-    items: 3,
+    items: 4,
 });
 $('.categories_list').owlCarousel({
     rtl: true,
@@ -82,7 +83,7 @@ for (i = 0; i < x.length; i++) {
     /*for each element, create a new DIV that will contain the option list:*/
     b = document.createElement("DIV");
     b.setAttribute("class", "select-items select-hide");
-    for (j = 1; j < selElmnt.length; j++) {
+    for (j = 0; j < selElmnt.length; j++) {
         /*for each option in the original select element,
         create a new DIV that will act as an option item:*/
         c = document.createElement("DIV");
