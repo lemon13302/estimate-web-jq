@@ -188,3 +188,12 @@
     margin-right: auto !important;
     margin-top: 50px !important;
 }
+
+.custom-text input{
+    background-color: inherit;
+    border: none;
+    font-size: inherit;
+    color: #333;
+    text-align: left;
+    margin: 5px;
+}

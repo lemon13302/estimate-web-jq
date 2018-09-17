@@ -277,3 +277,5 @@ $('body').on('click', '.ripple-effect', function (e) {
 
 $('.owl-prev').addClass('mdi mdi-chevron-right').text('');
 $('.owl-next').addClass('mdi mdi-chevron-left').text('');
+
+$('.custom-text input').closest('.custom_select').click(function(e){$(e.target).find('input').focus();})
