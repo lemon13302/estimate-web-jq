@@ -821,7 +821,7 @@
         </div>
     </div>
 </div>
-<!--Modal Section-->
+<!--Modal Section Error -->
 <div class="tiny reveal mb" id="modal_warning" data-reveal>
     <div class="red_text mb">اخطار</div>
     <div class="mb warning_text_revael">
@@ -832,6 +832,45 @@
           تایید
             </span>
     </div>
+</div>
+
+<!--Modal Section Select Brand-->
+<div class="tiny reveal mb" id="select_brand" data-reveal>
+    <div class="red_text mb">انتخاب برند</div>
+    <fieldset class="fieldset">
+        <legend>برند مورد نظر خود را انتخاب کنید</legend>
+        <div>
+        <span>
+          <input type="radio" name="brand" value="PG"><label>PG</label>
+        </span>
+        </div>
+        <div>
+        <span>
+          <input type="radio" name="brand" value="TG"><label>TG</label>
+        </span>
+        </div>
+        <div>
+        <span>
+          <input type="radio" name="brand" value="vino"><label>وینو</label>
+        </span>
+        </div>
+        <div>
+        <span>
+          <input type="radio" name="brand" value="اینگل"><label>اینگل</label>
+        </span>
+        </div>
+        <div>
+        <span>
+          <input type="radio" name="brand" value="پلمیرپلاس"><label>پلمیرپلاس</label>
+        </span>
+        </div>
+        <div class="close-button-text" data-close aria-label="Close reveal" type="button" id="selection_brand">
+            <span aria-hidden="true">
+          تایید
+            </span>
+        </div>
+    </fieldset>
+
 </div>
 <!-- //end sidebar -->
 <script src="js/jquery.js"></script>
@@ -858,16 +897,12 @@
             e.preventDefault();
             //Tovalet Validation Section
 
-
             var count_rizer_to = $('#count_rizer_to').val();
-            $('#size_rizer_to').val();
-            $('#select_Shoor option:selected').text();
-            $('#size_rize_to option:selected').text();
-            $('#farangy_to option:selected').text();
             //Validations
             //-----------------------------------------
             if (project.general.unitInFloor > count_rizer_to || (project.general.unitInFloor * 2) < count_rizer_to) {
-                $('#modal_warning .title_error').text("تعداد رایزر توالت باید بین " + project.general.unitInFloor + " و " + (project.general.unitInFloor * 2));
+                $('#modal_warning .title_error').text("تعداد رایزر توالت باید بین "
+                    + project.general.unitInFloor + " و " + (project.general.unitInFloor * 2));
                 $('a[href="#panel1c"]').click();
                 $('#modal_warning').foundation('open');
                 return;
@@ -875,15 +910,11 @@
             //------------------------------------------
             //Hmam Validation Section
             var count_rizer_hamam = $('#count_rizer_in_hamam').val();
-            $('#rizer_size_hamam option:selected').text();
-            $('#siphon_size_hamam option:selected').text();
-            $('#rize_vant_size_hamam option:selected').text();
-            $('#farangy_hamam option:selected').text();
-
             //Validations
             //-----------------------------------------
             if (project.general.unitInFloor > count_rizer_hamam || (project.general.unitInFloor * 3) < count_rizer_hamam) {
-                $('#modal_warning .title_error').text("تعداد رایزر حمام باید بین " + project.general.unitInFloor + " تا " + (project.general.unitInFloor * 3));
+                $('#modal_warning .title_error').text("تعداد رایزر حمام باید بین " +
+                    project.general.unitInFloor + " تا " + (project.general.unitInFloor * 3));
                 $('a[href="#panel2c"]').click();
                 $('#modal_warning').foundation('open');
                 return;
@@ -892,14 +923,11 @@
 
             //Ashpazkhane Validation Section
             var count_rizer_kitchen = $('#rizer_count_kitchen').val();
-            $('#rizer_size_kitchen option:selected').text();
-            $('#rizer_size_siphon_kitchen option:selected').text();
-            $('#rizer_size_vant_kitchen option:selected').text();
-
             //Validations
             //-----------------------------------------
-            if (project.general.unitInFloor > count_rizer_kitchen || (project.general.unitInFloor * 2) < ccount_rizer_kitchen) {
-                $('#modal_warning .title_error').text("تعداد رایزر آشپزخانه باید بین " + project.general.unitInFloor + " تا " + (project.general.unitInFloor * 2));
+            if (project.general.unitInFloor > count_rizer_kitchen || (project.general.unitInFloor * 2) < count_rizer_kitchen) {
+                $('#modal_warning .title_error').text("تعداد رایزر آشپزخانه باید بین "
+                    + project.general.unitInFloor + " تا " + (project.general.unitInFloor * 2));
                 $('a[href="#panel3c"]').click();
                 $('#modal_warning').foundation('open');
                 return;
@@ -908,13 +936,14 @@
 
             //Teras Validation Section
             var count_rizer_terace = $('#rizer_count_terrace').val();
-            var rizer_size_terace = $('#rizer_size_terrace option:selected').text();
-            var siphon_size = $('#siphon_size_terrace option:selected').text();
+            var rizer_size_terace = parseInt($('#rizer_size_terrace option:selected').text());
+            var siphon_size = parseInt($('#siphon_size_terrace option:selected').text());
 
             //Validations
             //-----------------------------------------
-            if (project.general.unitInFloor > count_rizer_terace || (project.general.unitInFloor * 3) < count_rizer_terace) {
-                $('#modal_warning .title_error').text("تعداد رایزر تراس باید بین " + project.general.unitInFloor + " تا " + (project.general.unitInFloor * 3));
+            if (1 > count_rizer_terace || (project.general.unitInFloor * 3) < count_rizer_terace) {
+                $('#modal_warning .title_error').text("تعداد رایزر تراس باید بین "
+                    + 1 + " تا " + (project.general.unitInFloor * 3));
                 $('a[href="#panel4c"]').click();
                 $('#modal_warning').foundation('open');
                 return;
@@ -928,12 +957,11 @@
 
             // Baran Validation Section
             var count_water_rizer = $('#count_rizer_water').val();
-            $('#rizer_size_water option:selected').text();
-
             //Validations
             //-----------------------------------------
-            if (project.general.unitInFloor > count_water_rizer || (project.general.unitInFloor * 2) < count_water_rizer) {
-                $('#modal_warning .title_error').text("تعداد رایزر آب باران باید بین " + project.general.unitInFloor + " تا " + (project.general.unitInFloor * 2));
+            if (1 > count_water_rizer || (project.general.unitInFloor * 2) < count_water_rizer) {
+                $('#modal_warning .title_error').text("تعداد رایزر آب باران باید بین "
+                    + 1 + " تا " + (project.general.unitInFloor * 2));
                 $('a[href="#panel5c"]').click();
                 $('#modal_warning').foundation('open');
                 return;
@@ -943,24 +971,72 @@
             // Common Validation Section
             var line_bazdyd = $('#count_line_bazdyd').val();
             var line_mofe = $('#count_line_mofe').val();
-            var count_total = project.general.floor + project.general.parkingFloor;
+            var count_total = parseInt(project.general.floor) + parseInt(project.general.parkingFloor);
 
             //Validations
             //-----------------------------------------
             if (count_total < line_mofe || line_mofe < 0) {
-                $('#modal_warning .title_error').text("تعداد خطوط موفه باید بین " + 0 + " تا " + count_rizer_to);
+                $('#modal_warning .title_error').text("تعداد خطوط موفه باید بین "
+                    + 0 + " تا " + count_total);
                 $('a[href="#panel6c"]').click();
                 $('#modal_warning').foundation('open');
                 return;
             }
 
-            if (count_total < line_mofe || line_mofe < 1) {
-                $('#modal_warning .title_error').text("تعداد خطوط موفه باید بین " + 1 + " تا " + count_rizer_to);
+            if (count_total < line_bazdyd || line_bazdyd < 1) {
+                $('#modal_warning .title_error').text("تعداد خطوط بازدید باید بین "
+                    + 1 + " تا " + count_total);
                 $('a[href="#panel6c"]').click();
                 $('#modal_warning').foundation('open');
                 return;
             }
             //------------------------------------------
+            $('#select_brand').foundation('open');
+            $('#select_brand input').on('change', function () {
+                project.brand_sewage = $('input[name=brand]:checked').val();
+                return;
+            });
+            project.sewage_req = {
+                bathroom: {
+                    riserCount: count_rizer_hamam,
+                    riserSize: $('#rizer_size_hamam option:selected').text(),
+                    siphonSize: $('#siphon_size_hamam option:selected').text(),
+                    toiletCount: $('#farangy_hamam option:selected').text() == 'دارد' ? 1 : 0,
+                    ventRiserSize: $('#rize_vant_size_hamam option:selected').text(),
+                    washclothCount: 0
+                },
+                kitchen: {
+                    dishWasherCount: 1,
+                    riserCount: count_rizer_kitchen,
+                    riserSize: $('#rizer_size_kitchen option:selected').text(),
+                    siphonSize: $('#rizer_size_siphon_kitchen option:selected').text(),
+                    ventRiserSize: $('#rizer_size_vant_kitchen option:selected').text(),
+                    washingMachineCount: 1
+                },
+                moshtarak: {
+                    countLineMouffe: line_mofe,
+                    countLineVisit: line_bazdyd
+                },
+                rainWater: {
+                    riserCount: count_water_rizer,
+                    riserSize: $('#rizer_size_water option:selected').text()
+                },
+                terrace: {
+                    siphonSize: siphon_size,
+                    riserCount: count_rizer_terace,
+                    riserSize: rizer_size_terace
+                },
+                toilet: {
+                    kafshoorSize: $('#select_Shoor option:selected').text(),
+                    riserCount: count_rizer_to,
+                    riserSize: 110,
+                    toiletCount: $('#farangy_to option:selected').text() == 'دارد' ? 1 : 0,
+                    ventRiserSize: $('#size_rize_to option:selected').text(),
+                    washclothCount: 1
+                }
+            };
+            db.update(project);
+            // $('#select_brand').foundation('open');
         });
         $('.yellow').on('click', function () {
             main_mennu.slideUp();
