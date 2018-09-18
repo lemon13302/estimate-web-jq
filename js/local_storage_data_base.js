@@ -41,7 +41,7 @@ var Project = function () {
     this.date = "";
     this.type = "";
     this.general = {};
-    this.active_part="";
+    this.active_part = "";
     this.sewage_req = {};
     this.water_req = {};
     this.package_req = {};
@@ -52,7 +52,7 @@ var Project = function () {
     this.package_res = {};
     this.water_res = {};
     this.sewage_fact = {};
-    this.water_fact = {};
+    this.package_fact = {};
 
 
 };

@@ -802,9 +802,7 @@
                 </tr>
 
                 </thead>
-                <tbody id="factor_body">
-
-                </tbody>
+                <tbody id="factor_body"></tbody>
             </table>
 
             <script>
@@ -816,33 +814,39 @@
                     var part = '';
                     switch (project.active_part) {
                         case 'fazelab' :
-                            part = "sewage_res";
+                            part = "sewage";
                             $('#f_project_part').text('فاضلاب');
                             $('#f_project_brand').text(project.brand_sewage);
                             break;
 
                         case 'package' :
-                            part = "package_res";
+                            part = "package";
                             $('#f_project_part').text('پکیج');
                             $('#f_project_brand').text(project.brand_package);
                             break;
 
                         case 'water' :
-                            part = "water_res";
+                            part = "water";
                             $('#f_project_part').text('آب سرد و گرم');
                             $('#f_project_brand').text(project.brand_water);
                             break;
                     }
                     //Data
                     var factor_body = '';
-                    part = project[part];
-                    for (var i = 0; i < part.length; i++) {
-                        factor_body += '<tr><td>' + (i + 1) + '</td><td>' + part[i].title + ' ' +
-                            part[i].size + '</td><td>' + part[i].count + '</td><td>' + part[i].unit + '</td></tr>';
-
+                    var segment = project[part + '_res'];
+                    var factor_response = [];
+                    for (var i = 0, j = 1, total_count = 0; i < segment.length; i++) {
+                        if (segment[i].count == 0) {
+                            continue;
+                        }
+                        total_count += segment[i].count;
+                        factor_body += '<tr><td>' + (j++) + '</td><td>' + segment[i].title + ' ' +
+                            segment[i].size + '</td><td>' + segment[i].count + '</td><td>' + segment[i].unit + '</td></tr>';
+                        factor_response.push(segment[i]);
                     }
+                    factor_body += '<tr><td colspan="2">جمع کل</td><td colspan="2">' + total_count + '</td></tr>';
                     $('#factor_body').html(factor_body);
-                    //Footer
+                    project[part + '_fact'] = factor_response;
                 }
             </script>
 
