@@ -872,6 +872,16 @@
     </fieldset>
 
 </div>
+
+<!--Loading Section -->
+<div class="tiny reveal mb" id="show_modal" data-reveal>
+    <div class="red_text mb">لطفا کمی صبر کنید</div>
+    <div>
+        <img src="images/loading.gif" alt="">
+    </div>
+
+</div>
+
 <!-- //end sidebar -->
 <script src="js/jquery.js"></script>
 <script src="js/foundation.min.js"></script>
@@ -992,51 +1002,88 @@
             }
             //------------------------------------------
             $('#select_brand').foundation('open');
-            $('#select_brand input').on('change', function () {
+            $('#selection_brand').on('click', function () {
                 project.brand_sewage = $('input[name=brand]:checked').val();
-                return;
+                console.log(project.brand_sewage);
+                project.sewage_req = {
+                    bathroom: {
+                        riserCount: count_rizer_hamam,
+                        riserSize: $('#rizer_size_hamam option:selected').text(),
+                        siphonSize: $('#siphon_size_hamam option:selected').text(),
+                        toiletCount: $('#farangy_hamam option:selected').text() == 'دارد' ? 1 : 0,
+                        ventRiserSize: $('#rize_vant_size_hamam option:selected').text(),
+                        washclothCount: 0
+                    },
+                    kitchen: {
+                        dishWasherCount: 1,
+                        riserCount: count_rizer_kitchen,
+                        riserSize: $('#rizer_size_kitchen option:selected').text(),
+                        siphonSize: $('#rizer_size_siphon_kitchen option:selected').text(),
+                        ventRiserSize: $('#rizer_size_vant_kitchen option:selected').text(),
+                        washingMachineCount: 1
+                    },
+                    moshtarak: {
+                        countLineMouffe: line_mofe,
+                        countLineVisit: line_bazdyd
+                    },
+                    rainWater: {
+                        riserCount: count_water_rizer,
+                        riserSize: $('#rizer_size_water option:selected').text()
+                    },
+                    terrace: {
+                        siphonSize: siphon_size,
+                        riserCount: count_rizer_terace,
+                        riserSize: rizer_size_terace
+                    },
+                    toilet: {
+                        kafshoorSize: $('#select_Shoor option:selected').text(),
+                        riserCount: count_rizer_to,
+                        riserSize: 110,
+                        toiletCount: $('#farangy_to option:selected').text() == 'دارد' ? 1 : 0,
+                        ventRiserSize: $('#size_rize_to option:selected').text(),
+                        washclothCount: 1
+                    }
+                };
+                db.update(project);
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://138.201.106.71:7000/api/v0/getFz',
+                    crossDomain: true,
+                    data: {
+                        id: project.id,
+                        name: project.name,
+                        date: project.date,
+                        type: project.type,
+                        general: JSON.stringify(project.general),
+                        sewage_req: JSON.stringify(project.sewage_req),
+                        brand_sewage: project.brand_sewage,
+                        device: null,
+                    },
+                    beforeSend: function () {
+                        $('#show_modal').foundation('open');
+                    },
+
+                    success: function (responseData) {
+                        project.sewage_res = responseData.results;
+                        console.log(responseData);
+                        db.update(project);
+
+                    },
+                    error: function (a) {
+                        console.log('error', a);
+                    },
+                    always: function (a) {
+                        console.log('always', a);
+                    },
+                    complete: function (a) {
+                        $('#show_modal').foundation('close');
+                    },
+
+                });
+
             });
-            project.sewage_req = {
-                bathroom: {
-                    riserCount: count_rizer_hamam,
-                    riserSize: $('#rizer_size_hamam option:selected').text(),
-                    siphonSize: $('#siphon_size_hamam option:selected').text(),
-                    toiletCount: $('#farangy_hamam option:selected').text() == 'دارد' ? 1 : 0,
-                    ventRiserSize: $('#rize_vant_size_hamam option:selected').text(),
-                    washclothCount: 0
-                },
-                kitchen: {
-                    dishWasherCount: 1,
-                    riserCount: count_rizer_kitchen,
-                    riserSize: $('#rizer_size_kitchen option:selected').text(),
-                    siphonSize: $('#rizer_size_siphon_kitchen option:selected').text(),
-                    ventRiserSize: $('#rizer_size_vant_kitchen option:selected').text(),
-                    washingMachineCount: 1
-                },
-                moshtarak: {
-                    countLineMouffe: line_mofe,
-                    countLineVisit: line_bazdyd
-                },
-                rainWater: {
-                    riserCount: count_water_rizer,
-                    riserSize: $('#rizer_size_water option:selected').text()
-                },
-                terrace: {
-                    siphonSize: siphon_size,
-                    riserCount: count_rizer_terace,
-                    riserSize: rizer_size_terace
-                },
-                toilet: {
-                    kafshoorSize: $('#select_Shoor option:selected').text(),
-                    riserCount: count_rizer_to,
-                    riserSize: 110,
-                    toiletCount: $('#farangy_to option:selected').text() == 'دارد' ? 1 : 0,
-                    ventRiserSize: $('#size_rize_to option:selected').text(),
-                    washclothCount: 1
-                }
-            };
-            db.update(project);
-            // $('#select_brand').foundation('open');
+
+
         });
         $('.yellow').on('click', function () {
             main_mennu.slideUp();
