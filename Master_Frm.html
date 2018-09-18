@@ -760,73 +760,92 @@
                 <tr>
                     <td width="33%" class="text-right">
                                 <span class="IRANSansMobile_Medium">نام پروژه:
-                                    <span> الهیه</span>
+                                    <span id="f_project_name"></span>
                                 </span>
                     </td>
                     <td width="33%" class="text-center">
                     </td>
                     <td width="33%" class="text-left">
                                 <span class="IRANSansMobile_Medium">تاریخ پروژه :
-                                    <span dir="ltr"> 97/5/25</span>
+                                    <span dir="ltr" id="f_project_date"></span>
                                 </span>
                     </td>
                 </tr>
                 <tr>
                     <td width="33%" class="text-right">
                                 <span class="IRANSansMobile_Medium">نوع پروژه:
-                                    <span> تجاری</span>
+                                    <span id="f_project_type"></span>
                                 </span>
                     </td>
                     <td width="33%" class="text-center">
                                 <span class="IRANSansMobile_Medium">برند :
-                                    <span dir="ltr"> برند X</span>
+                                    <span dir="ltr" id="f_project_brand"></span>
                                 </span>
                     </td>
                     <td width="33%" class="text-left">
                                 <span class="IRANSansMobile_Medium"> بخش:
-                                    <span dir="ltr"> فاضلاب</span>
+                                    <span dir="ltr" id="f_project_part"></span>
                                 </span>
                     </td>
                 </tr>
                 </tbody>
             </table>
 
+
             <table class="factor_table factor_print text-center">
                 <thead>
                 <tr>
-                    <th>ر</th>
+                    <th>ردیف</th>
                     <th>عنوان</th>
-                    <th>عنوان</th>
-                    <th>عنوان</th>
+                    <th>تعداد</th>
+                    <th>واحد</th>
                 </tr>
 
                 </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>متن تصادفی جهات نمایش به کاربرمتن تصادفی جهات نمایش به کاربرمتن تصادفی جهات نمایش به کاربر</td>
-                    <td>60 عدد</td>
-                    <td>50عدد</td>
-
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>متن تصادفی جهات نمایش به کاربرمتن تصادفی جهات نمایش به کاربرمتن تصادفی جهات نمایش به کاربر</td>
-                    <td>60 عدد</td>
-                    <td>50عدد</td>
-
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td>جمع کل</td>
-                    <td>300</td>
-                    <td>300</td>
-
-                </tr>
+                <tbody id="factor_body">
 
                 </tbody>
             </table>
+
+            <script>
+                function factor_loader() {
+                    //Header
+                    $('#f_project_name').text(project.name);
+                    $('#f_project_type').text(project.type);
+                    $('#f_project_date').text(project.date);
+                    var part = '';
+                    switch (project.active_part) {
+                        case 'fazelab' :
+                            part = "sewage_res";
+                            $('#f_project_part').text('فاضلاب');
+                            $('#f_project_brand').text(project.brand_sewage);
+                            break;
+
+                        case 'package' :
+                            part = "package_res";
+                            $('#f_project_part').text('پکیج');
+                            $('#f_project_brand').text(project.brand_package);
+                            break;
+
+                        case 'water' :
+                            part = "water_res";
+                            $('#f_project_part').text('آب سرد و گرم');
+                            $('#f_project_brand').text(project.brand_water);
+                            break;
+                    }
+                    //Data
+                    var factor_body = '';
+                    part = project[part];
+                    for (var i = 0; i < part.length; i++) {
+                        factor_body += '<tr><td>' + (i + 1) + '</td><td>' + part[i].title + ' ' +
+                            part[i].size + '</td><td>' + part[i].count + '</td><td>' + part[i].unit + '</td></tr>';
+
+                    }
+                    $('#factor_body').html(factor_body);
+                    //Footer
+                }
+            </script>
+
         </div>
 
         <!--  -->
@@ -999,7 +1018,6 @@
 <script>
     window.project = new Project;
     window.db = new DBM("App");
-
     $(document).ready(function () {
         var main_mennu = $('#main_menu');
         var create_project = $('#create_project');
@@ -1175,6 +1193,7 @@
                         db.update(project);
                         fazelab_form.fadeOut();
                         factor.fadeIn();
+                        factor_loader();
                     },
                     error: function (a) {
                         console.log('error', a);
@@ -1187,16 +1206,19 @@
                     },
 
                 });
-
             });
-
-
         });
         $('.yellow').on('click', function () {
             main_mennu.slideUp();
             fazelab_form.slideDown();
         });
-
+        $('.orange').on('click', function () {
+            project = db.get(16);
+            main_mennu.fadeOut();
+            factor.fadeIn();
+            console.log(project);
+            factor_loader();
+        });
         $('#main_menu #greens').on('click', function () {
             main_mennu.slideUp();
             create_project.slideDown();

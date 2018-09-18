@@ -53,6 +53,6 @@ var Project = function () {
     this.water_res = {};
     this.sewage_fact = {};
     this.water_fact = {};
-    this.brand_fact = {}
+
 
 };
