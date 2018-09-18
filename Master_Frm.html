@@ -723,7 +723,7 @@
                 </a>
                 <!-- end item_parts -->
                 <!-- start item_parts -->
-                <a class="item_parts " data-id="water" href="#">
+                <a class="item_parts hot_open" data-id="water" href="#">
                     <div class="parts_menu_text greenBlue_text text-right float-right ">آب سرد و گرم</div>
                     <img class="img_parts_menu float-left " src="images/Parts-Menu_3.png " alt=" ">
                 </a>
@@ -905,63 +905,148 @@
         <!-- content -->
         <div class="row columns">
             <table class="archives">
-                <tbody>
-                <tr>
-                    <td>
-                        <div class="archive_text">
-                            <a href=""> پروژه الهیه</a>
-                            <div class="float-left">
-                                <a href=""><i class="material-icons md-24">arrow_back_ios</i> </a></div>
-                        </div>
-                        <div class="date">
-                            <span>تاریخ شروع پروژه</span>
-                            <span dir="ltr">97/6/25</span>
-                        </div>
-                        <div class="description_archive">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم
-                            است
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="archive_text">
-                            <a href=""> پروژه افسریه</a>
-                            <div class="float-left">
-                                <a href=""><i class="material-icons md-24">arrow_back_ios</i> </a></div>
-                        </div>
-                        <div class="date">
-                            <span>تاریخ شروع پروژه</span>
-                            <span dir="ltr">97/6/25</span>
-                        </div>
-                        <div class="description_archive">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم
-                            است
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="archive_text">
-                            <a href=""> پروژه شهرک شکوهیه </a>
-                            <div class="float-left">
-                                <a href=""><i class="material-icons md-24">arrow_back_ios</i> </a></div>
-                        </div>
-                        <div class="date">
-                            <span>تاریخ شروع پروژه</span>
-                            <span dir="ltr">97/6/25</span>
-                        </div>
-                        <div class="description_archive">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم
-                            است
-                        </div>
-                    </td>
-                </tr>
+                <tbody id="a_tbody">
+
                 </tbody>
             </table>
+            <script>
+                function load_archive() {
+                    var archive_body = '';
+                    var rows = db.db;
+                    for (var i = rows.length - 1; i > 0; i--) {
+                        archive_body += '<tr><td  data-id="' + rows[i].id + '"><div class="archive_text"><a>' + rows[i].name +
+                            '</a><div class="float-left"><a href=""><i class="material-icons md-24">arrow_back_ios</i>' +
+                            '</a></div></div><div class="date"><span>تاریخ شروع پروژه</span>' + rows[i].date + ' <span dir="ltr"></span>' +
+                            '</div><div class="description_archive">' + rows[i].type + '</div> </td> </tr>';
+                    }
+                    $('#a_tbody').html(archive_body).find('td *').on('click', function (e) {
+                        project = db.get($(e.target).closest('td').attr('data-id'));
+                        var general = $('#general_form');
+                        var archive = $('#Archive_form');
+                        archive.fadeOut();
+                        general.fadeIn();
+                    })
+                }
+
+            </script>
             <!-- //end content -->
         </div>
     </div>
+</div>
+<!--Hot and Col-->
+<div class="off-canvas-content mobile_wrapper" data-off-canvas-content style="display:none" id="hot_col">
+    <div class="page_bottomBar">
+        <div class="header main">
+            <div class="top_row">
+                <div class="row columns">
+                    <ul class="space-between">
+                        <li>
+                            <a data-toggle="offCanvas">
+                                <i class="material-icons">menu</i>
+                            </a>
+                        </li>
+                        <li class="parts head_text">پروژه الهیه</li>
+                        <li>
+                            <a href="">
+                                <i class="material-icons">arrow_back</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="row columns mb fazelab_page">
+            <div class="center_wrapper mb inline">
+                <div class="flex_main_menu mb">
+                    <div class="">
+                        <img class="" src="images/garm-&-sard-right.jpg" alt="">
+                    </div>
+                    <div class="">
+                        <div class="titr_fazelab"> فرم آب سرد و گرم</div>
+                    </div>
+                    <div class=" ">
+                        <img class="" src="images/garm-&-sard-left.png" alt="">
+                    </div>
+                </div>
+
+
+                <div class="create-project mb">
+                    <!-- tabs -->
+                    <ul class="tabs menu expanded text-center ovh" data-active-collapse="true" data-tabs
+                        id="collapsing-tabs">
+                        <li class="tabs-title is-active">
+                            <a href="#panel1c" aria-selected="true"> عنوان اول</a>
+                        </li>
+                        <li class="tabs-title">
+                            <a href="#panel2c"> عنوان دوم</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tabs-content" data-tabs-content="collapsing-tabs">
+                    <div class="tabs-panel is-active" id="panel1c">
+                        <div class="row columns center_wrapper">
+                            <div class="large-10 float-center">
+                                <div class="custom_select">
+                                    <div class="text">سایز سیفون:</div>
+                                    <div class="custom-select">
+                                        <select>
+                                            <option value="">90</option>
+                                            <option value="">90</option>
+                                            <option value="">90</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-6 columns">
+                                        <div class="custom_select">
+                                            <div class="text">سایز سیفون:</div>
+                                            <div class="custom-select">
+                                                <select>
+                                                    <option value="">90</option>
+                                                    <option value="">90</option>
+                                                    <option value="">90</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="small-6 columns">
+                                        <div class="custom_select">
+                                            <div class="text">سایز سیفون:</div>
+                                            <div class="custom-select">
+                                                <select>
+                                                    <option value="">90</option>
+                                                    <option value="">90</option>
+                                                    <option value="">90</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form_control">
+                                    <input type="text" placeholder="سایز رایز ونت">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs-panel" id="panel2c">
+                        تب 2
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="menu_bottom_bar">
+            <a href="" class="btn">تایید</a>
+        </div>
+    </div>
+
+
 </div>
 <!--Modal Section Error -->
 <div class="tiny reveal mb" id="modal_warning" data-reveal>
@@ -1044,6 +1129,7 @@
         var fazelab_form = $('#fazelab_form');
         var Archive_form = $('#Archive_form');
         var part_menu_form = $('#part_menu_form');
+        var hot_col = $('#hot_col');
         var factor = $('#factor');
 
         $('.success_fazelab').on('click', function (e) {
@@ -1231,13 +1317,7 @@
             main_mennu.slideUp();
             fazelab_form.slideDown();
         });
-        $('.orange').on('click', function () {
-            project = db.get(16);
-            main_mennu.fadeOut();
-            factor.fadeIn();
-            console.log(project);
-            factor_loader();
-        });
+
         $('#main_menu #greens').on('click', function () {
             main_mennu.slideUp();
             create_project.slideDown();
@@ -1247,6 +1327,7 @@
             create_project.slideUp();
         })
         $('#main_menu #blue').on('click', function () {
+            load_archive();
             main_mennu.slideUp();
             Archive_form.slideDown();
         });
@@ -1303,6 +1384,10 @@
             part_menu_form.slideUp();
             fazelab_form.slideDown();
         });
+        $('.hot_open').on('click', function () {
+            part_menu_form.slideUp();
+            hot_col.fadeIn();
+        })
         // Create Project
         $('#success').on('click', function () {
             var project_name = $('#project_name');
