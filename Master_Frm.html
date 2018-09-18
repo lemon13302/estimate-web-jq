@@ -763,8 +763,7 @@
                                     <span id="f_project_name"></span>
                                 </span>
                     </td>
-                    <td width="33%" class="text-center">
-                    </td>
+                    <td width="33%" class="text-center"></td>
                     <td width="33%" class="text-left">
                                 <span class="IRANSansMobile_Medium">تاریخ پروژه :
                                     <span dir="ltr" id="f_project_date"></span>
@@ -847,31 +846,47 @@
                     factor_body += '<tr><td colspan="2">جمع کل</td><td colspan="2">' + total_count + '</td></tr>';
                     $('#factor_body').html(factor_body);
                     project[part + '_fact'] = factor_response;
+                    $('#pdf_file').on('click', function (e) {
+                        if (typeof ($(e.target).attr('href')) != 'undefined') {
+                            return;
+                        }
+                        $.ajax('http://138.201.106.71:7000/api/v0/getPDF', {
+                            type: 'post',
+                            crossDomain: true,
+                            data: {
+                                id: project.id,
+                                name: project.name,
+                                type: project.type,
+                                part: part,
+                                date: project.date,
+                                brand: project['brand_' + part],
+                                data: JSON.stringify(factor_response),
+                                device: null
+                            },
+                            beforeSend: function () {
+                                $('#show_modal').foundation('open');
+                            },
+                            success: function (response) {
+                                if (response.result != 'system busy') {
+                                    $('#pdf_file').attr('href', 'http://138.201.106.71:7000/' + response.result);
+                                    $('#show_modal').foundation('close');
+                                    $('#pdf_file').text('نمایش')
+                                }
+                            },
+
+                        })
+                    })
                 }
+
             </script>
 
         </div>
 
         <!--  -->
-        <div class="row columns">
-            <div class="center_wrapper ">
-                <div class="row_flex text-center">
-                    <div class="circle pdf">PDF</div>
-                    <div class="circle share">
-                        <i class="material-icons">
-                            share
-                        </i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="menu_bottom_bar">
-            <a href="" class="btn btn_2">X</a>
+            <a id="pdf_file" target="_blank" class="btn btn_2">PDF</a>
         </div>
     </div>
-
-
 </div>
 <!--Archive Form-->
 <div class="off-canvas-content mobile_wrapper" id="Archive_form" data-off-canvas-content style="display:none">
