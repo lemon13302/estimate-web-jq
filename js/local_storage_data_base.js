@@ -36,6 +36,7 @@ function DBM(pro_title) {
 }
 
 var Project = function () {
+    this.water_green = false;
     this.id = null;
     this.name = "";
     this.date = "";
@@ -53,6 +54,4 @@ var Project = function () {
     this.water_res = {};
     this.sewage_fact = {};
     this.package_fact = {};
-
-
 };

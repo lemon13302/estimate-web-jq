@@ -715,7 +715,7 @@
                 </a>
                 <!-- end item_parts -->
                 <!-- start item_parts -->
-                <a class="item_parts " data-id="package" href="#">
+                <a class="item_parts heating_open" data-id="package" href="#">
                     <div class="parts_menu_text redorange_text text-right float-right ">گرمایش
                         <span class="secendery_text ">(رادیاتور)</span>
                     </div>
@@ -733,6 +733,102 @@
         </div>
     </div>
 </div>
+<!--Heating-->
+<div class="off-canvas-content mobile_wrapper" data-off-canvas-content id="heating" style="display:none">
+    <div class="page_bottomBar">
+        <div class="header main">
+            <div class="top_row">
+                <div class="row columns">
+                    <ul class="space-between">
+                        <li>
+                            <a data-toggle="offCanvas">
+                                <i class="material-icons">menu</i>
+                            </a>
+                        </li>
+                        <li class="parts head_text">پروژه الهیه</li>
+                        <li>
+                            <a href="">
+                                <i class="material-icons">arrow_back</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--  -->
+        <div class="row columns mb fazelab_page">
+            <div class="center_wrapper mb inline">
+                <div class="flex_main_menu mb">
+                    <div class="">
+                        <img class="" src="images/garm-&-sard-right.jpg" alt="">
+                    </div>
+                    <div class="">
+                        <div class="titr_fazelab"> فرم گرمایش</div>
+                    </div>
+                    <div class=" ">
+                        <img class="" src="images/garm-&-sard-left.png" alt="">
+                    </div>
+                </div>
+                <div class="create-project mb">
+                    <!-- Content -->
+                    <div class="row columns center_wrapper ">
+                        <div class="large-10 float-center multi">
+                            <span class="close">&times</span>
+                            <div class="row">
+                                <div class="small-6 columns">
+                                    <div class="custom_select">
+                                        <div class="text">تعداد رایزر:</div>
+                                        <div class="custom-select">
+                                            <select>
+                                                <option value="">63</option>
+                                                <option value="">90</option>
+                                                <option value="">110</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="small-6 columns">
+                                    <div class="custom_select">
+                                        <div class="text">سایز رایزر:</div>
+                                        <div class="custom-select">
+                                            <select>
+                                                <option value="">90</option>
+                                                <option value="">90</option>
+                                                <option value="">90</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form_control">
+                                <input type="text" placeholder="تعداد روشوئی">
+                            </div>
+                            <div class="form_control">
+                                <input type="text" placeholder="تعداد روشوئی">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row column center_wrapper">
+                        <div class="large-10 float-center add_box">
+                              <span class="pluss">
+                                  <i class="plus_adder">&times;</i>
+                              </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="menu_bottom_bar">
+        <a href="" class="btn">تایید</a>
+    </div>
+</div>
+
 <!--Factor-->
 <div class="off-canvas-content mobile_wrapper" data-off-canvas-content style="display:none" id="factor">
     <div class="page_bottomBar">
@@ -934,7 +1030,7 @@
     </div>
 </div>
 <!--Hot and Col-->
-<div class="off-canvas-content mobile_wrapper" data-off-canvas-content style="display:none" id="hot_col">
+<div class="off-canvas-content mobile_wrapper" data-off-canvas-content id="hot_col" style="display:none">
     <div class="page_bottomBar">
         <div class="header main">
             <div class="top_row">
@@ -955,6 +1051,7 @@
                 </div>
             </div>
         </div>
+
         <!--  -->
         <div class="row columns mb fazelab_page">
             <div class="center_wrapper mb inline">
@@ -970,79 +1067,95 @@
                     </div>
                 </div>
 
-
                 <div class="create-project mb">
                     <!-- tabs -->
-                    <ul class="tabs menu expanded text-center ovh" data-active-collapse="true" data-tabs
-                        id="collapsing-tabs">
+                    <ul class="tabs menu expanded text-center ovh custom_selection_tab" data-active-collapse="true"
+                        data-tabs
+                        id="collapsingg-tabs">
                         <li class="tabs-title is-active">
-                            <a href="#panel1c" aria-selected="true"> عنوان اول</a>
+                            <a href="#panell1c" aria-selected="true">سبز</a>
                         </li>
                         <li class="tabs-title">
-                            <a href="#panel2c"> عنوان دوم</a>
+                            <a href="#panell2c">چند لایه</a>
                         </li>
                     </ul>
                 </div>
-                <div class="tabs-content" data-tabs-content="collapsing-tabs">
-                    <div class="tabs-panel is-active" id="panel1c">
+                <div class="tabs-content" data-tabs-content="collapsingg-tabs">
+                    <div class="tabs-panel is-active" id="panell1c">
                         <div class="row columns center_wrapper">
                             <div class="large-10 float-center">
                                 <div class="custom_select">
-                                    <div class="text">سایز سیفون:</div>
+                                    <div class="text">سایز رایزر:</div>
                                     <div class="custom-select">
-                                        <select>
-                                            <option value="">90</option>
-                                            <option value="">90</option>
-                                            <option value="">90</option>
+                                        <select id="greens_rizer_size">
+                                            <option value="">25</option>
+                                            <option value="">32</option>
                                         </select>
                                     </div>
                                 </div>
-
-                                <div class="row">
-                                    <div class="small-6 columns">
-                                        <div class="custom_select">
-                                            <div class="text">سایز سیفون:</div>
-                                            <div class="custom-select">
-                                                <select>
-                                                    <option value="">90</option>
-                                                    <option value="">90</option>
-                                                    <option value="">90</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="small-6 columns">
-                                        <div class="custom_select">
-                                            <div class="text">سایز سیفون:</div>
-                                            <div class="custom-select">
-                                                <select>
-                                                    <option value="">90</option>
-                                                    <option value="">90</option>
-                                                    <option value="">90</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form_control">
-                                    <input type="text" placeholder="سایز رایز ونت">
-                                </div>
-
                             </div>
                         </div>
                     </div>
-                    <div class="tabs-panel" id="panel2c">
-                        تب 2
+                    <div class="tabs-panel" id="panell2c">
+                        <div class="row columns center_wrapper ">
+                            <div class="large-10 float-center multi">
+                                <span class="close">&times</span>
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <div class="custom_select">
+                                            <div class="text">تعداد واحد:</div>
+                                            <div class="custom-text">
+                                                <input id="count_vahed">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <div class="custom_select">
+                                            <div class="text">انشعاب کلکتور:</div>
+                                            <div class="custom-text">
+                                                <input id="Split_collector">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom_select">
+                                    <div class="text">ورودی:</div>
+                                    <div class="custom-select">
+                                        <select id="inputer_multi">
+                                            <option value="">25</option>
+                                            <option value="">32</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="custom_select">
+                                    <div class="text">خروجی:</div>
+                                    <div class="custom-select">
+                                        <select id="output_multi">
+                                            <option value="">16</option>
+                                            <option value="">20</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row column center_wrapper">
+                            <div class="large-10 float-center add_box">
+                              <span class="pluss">
+                                  <i class="plus_adder">&times;</i>
+                              </span>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
+
             </div>
 
         </div>
 
         <div class="menu_bottom_bar">
-            <a href="" class="btn">تایید</a>
+            <a href="" class="btn" id="hot_success">تایید</a>
         </div>
     </div>
 
@@ -1060,7 +1173,6 @@
             </span>
     </div>
 </div>
-
 <!--Modal Section Select Brand-->
 <div class="tiny reveal mb" id="select_brand" data-reveal>
     <div class="red_text mb">انتخاب برند</div>
@@ -1099,13 +1211,97 @@
     </fieldset>
 
 </div>
-
 <!--Loading Section -->
 <div class="tiny reveal mb" id="show_modal" data-reveal>
     <div class="red_text mb">لطفا کمی صبر کنید</div>
     <div>
         <img src="images/loading.gif" alt="">
     </div>
+
+</div>
+<!--Get Fazelab-->
+<div class="tiny reveal mb" id="get_faz" data-reveal>
+    <div class="red_text mb">اخطار</div>
+    <div class="mb warning_text_revael">
+        <p class="title_error"></p>
+    </div>
+
+
+    <div class="row">
+        <div class="close-button-text small-6 column" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">
+          تایید
+            </span>
+        </div>
+        <div class="close-button-text small-6 column" type="button">
+             <span class="get_fazelab">
+         فاضلاب
+            </span>
+        </div>
+    </div>
+
+</div>
+
+<!--Modal Section Select Brand Sabz-->
+<div class="tiny reveal mb" id="select_brand_sabz" data-reveal>
+    <div class="red_text mb">انتخاب برند</div>
+    <fieldset class="fieldset">
+        <legend>برند مورد نظر خود را انتخاب کنید</legend>
+        <div>
+        <span>
+          <input type="radio" name="brand_sabz" value="آذین"><label>آذین</label>
+        </span>
+        </div>
+        <div>
+        <span>
+          <input type="radio" name="brand_sabz" value="سان پایپ"><label>سان پایپ</label>
+        </span>
+        </div>
+        <div>
+        <span>
+          <input type="radio" name="brand_sabz" value="یزد لوله"><label>یزد لوله</label>
+        </span>
+        </div>
+        <div>
+        <span>
+          <input type="radio" name="brand_sabz" value="رویال پایپ"><label>رویال پایپ</label>
+        </span>
+        </div>
+        <div class="close-button-text" data-close aria-label="Close reveal" type="button" id="selection_brand_sabz">
+            <span aria-hidden="true">
+          تایید
+            </span>
+        </div>
+    </fieldset>
+
+</div>
+
+<!--Modal Section Select Brand Multi-->
+<div class="tiny reveal mb" id="select_brand_multi" data-reveal>
+    <div class="red_text mb">انتخاب برند</div>
+    <fieldset class="fieldset" id="brand_multi">
+        <legend>برند مورد نظر خود را انتخاب کنید</legend>
+        <div>
+        <span>
+          <input type="radio" name="brand_multi" value="نیوپایپ" checked="true"><label>نیوپایپ</label>
+        </span>
+        </div>
+        <div>
+        <span>
+          <input type="radio" name="brand_multi" value="یونیک پایپ"><label>یونیک پایپ</label>
+        </span>
+        </div>
+        <div>
+        <span>
+          <input type="radio" name="brand_multi" value="سوپر پایپ"><label>سوپر پایپ</label>
+        </span>
+        </div>
+        <div class="close-button-text" data-close aria-label="Close reveal" type="button" id="selection_brand_multi">
+            <span aria-hidden="true">
+          تایید
+            </span>
+        </div>
+    </fieldset>
 
 </div>
 
@@ -1130,12 +1326,142 @@
         var Archive_form = $('#Archive_form');
         var part_menu_form = $('#part_menu_form');
         var hot_col = $('#hot_col');
+        var heating = $('#heating');
         var factor = $('#factor');
 
+        // Validation Hot
+        $('#hot_success').on('click', function (e) {
+            e.preventDefault();
+            //---------------------------------------------------
+            if ($('.custom_selection_tab [aria-selected="true"]').text() == 'سبز') {
+                if (JSON.stringify(project.sewage_req) == '{}') {
+                    $('#get_faz .title_error').text("برای برآورد لوله سبز ابتدا بایستی فاضلاب را پر کرده باشید");
+                    $('#get_faz').foundation('open');
+
+                    if ($('.get_fazelab').on('click', function () {
+                        hot_col.fadeOut();
+                        fazelab_form.fadeIn();
+                        project.water_green = true;
+                        $('#get_faz').foundation('close');
+                    }))
+                        return;
+                }
+                project.water_req.rizerSize = $('#greens_rizer_size option:selected').text();
+                $('#select_brand_sabz').foundation('open');
+                $('#selection_brand_sabz').on('click', function () {
+                    project.brand_water = $('input[name=brand_sabz]:checked').val();
+                    db.update(project);
+                    $.ajax({
+                        type: 'POST',
+                        url: 'http://138.201.106.71:7000/api/v0/getWater',
+                        crossDomain: true,
+                        data: {
+                            id: project.id,
+                            name: project.name,
+                            date: project.date,
+                            type: project.type,
+                            general: JSON.stringify(project.general),
+                            sewage_req: JSON.stringify(project.sewage_req),
+                            brand_sewage: project.brand_sewage,
+                            device: null,
+                        },
+                        beforeSend: function () {
+                            $('#show_modal').foundation('open');
+                        },
+
+                        success: function (responseData) {
+                            project.sewage_res = responseData.results;
+                            //  console.log(responseData);
+                            db.update(project);
+                            hot_col.fadeOut();
+                            factor.fadeIn();
+                            factor_loader();
+                        },
+                        error: function (a) {
+                            console.log('error', a);
+                        },
+                        always: function (a) {
+                            console.log('always', a);
+                        },
+                        complete: function (a) {
+                            $('#show_modal').foundation('close');
+                        },
+
+                    });
+                })
+            }
+            else {
+                var count_vahed = $('#count_vahed').val();
+                if (count_vahed !== project.general.unitTotal) {
+                    $('#modal_warning .title_error').text("تعداد واحد وارد شده با تعداد کل واحد ها برابر نمی باشد ");
+                    $('#modal_warning').foundation('open');
+                    return;
+                }
+                var split_collector = $('#Split_collector').val();
+                if (split_collector < 2 || split_collector > 25) {
+                    $('#modal_warning .title_error').text("انشعاب کلکتور باید عددی بین 2 تا 25 باشد");
+                    $('#modal_warning').foundation('open');
+                    return;
+                }
+                var modal_id = $('#select_brand_multi');
+                project.water_req.levels = [
+                    {
+                        'branchCollector': $('#count_vahed').val(),
+                        'countUnit': $('#Split_collector').val(),
+                        'inputPipe': $('#inputer_multi option:selected').text(),
+                        'outputPipe': $('#output_multi option:selected').text(),
+                    },
+                    null,null,null,null
+                ];
+                modal_id.foundation('open');
+                if ($('#selection_brand_multi').on('click', function () {
+                    project.brand_water = $('input[name=brand_multi]:checked').val();
+                    db.update(project);
+                    $.ajax({
+                        type: 'POST',
+                        url: 'http://138.201.106.71:7000/api/v0/getWater',
+                        crossDomain: true,
+                        data: {
+                            id: project.id,
+                            name: project.name,
+                            date: project.date,
+                            type: project.type,
+                            general:JSON.stringify(project.general),
+                            water_req: JSON.stringify(project.water_req),
+                            brand_water: project.brand_water,
+                            device: "",
+                        },
+                        beforeSend: function () {
+                            $('#show_modal').foundation('open');
+                        },
+
+                        success: function (responseData) {
+                            project.water_res = responseData.results;
+                            //  console.log(responseData);
+                            db.update(project);
+                            hot_col.fadeOut();
+                            factor.fadeIn();
+                            factor_loader();
+                        },
+                        error: function (a) {
+                            console.log('error', a);
+                        },
+                        always: function (a) {
+                            console.log('always', a);
+                        },
+                        complete: function (a) {
+                            $('#show_modal').foundation('close');
+                        },
+
+                    });
+                })) ;
+            }
+
+        });
+        // Fazelab Validation Start
         $('.success_fazelab').on('click', function (e) {
             e.preventDefault();
             //Tovalet Validation Section
-
             var count_rizer_to = $('#count_rizer_to').val();
             //Validations
             //-----------------------------------------
@@ -1230,49 +1556,55 @@
                 return;
             }
             //------------------------------------------
+            project.sewage_req = {
+                bathroom: {
+                    riserCount: count_rizer_hamam,
+                    riserSize: $('#rizer_size_hamam option:selected').text(),
+                    siphonSize: $('#siphon_size_hamam option:selected').text(),
+                    toiletCount: $('#farangy_hamam option:selected').text() == 'دارد' ? 1 : 0,
+                    ventRiserSize: $('#rize_vant_size_hamam option:selected').text(),
+                    washclothCount: 0
+                },
+                kitchen: {
+                    dishWasherCount: 1,
+                    riserCount: count_rizer_kitchen,
+                    riserSize: $('#rizer_size_kitchen option:selected').text(),
+                    siphonSize: $('#rizer_size_siphon_kitchen option:selected').text(),
+                    ventRiserSize: $('#rizer_size_vant_kitchen option:selected').text(),
+                    washingMachineCount: 1
+                },
+                moshtarak: {
+                    countLineMouffe: line_mofe,
+                    countLineVisit: line_bazdyd
+                },
+                rainWater: {
+                    riserCount: count_water_rizer,
+                    riserSize: $('#rizer_size_water option:selected').text()
+                },
+                terrace: {
+                    siphonSize: siphon_size,
+                    riserCount: count_rizer_terace,
+                    riserSize: rizer_size_terace
+                },
+                toilet: {
+                    kafshoorSize: $('#select_Shoor option:selected').text(),
+                    riserCount: count_rizer_to,
+                    riserSize: 110,
+                    toiletCount: $('#farangy_to option:selected').text() == 'دارد' ? 1 : 0,
+                    ventRiserSize: $('#size_rize_to option:selected').text(),
+                    washclothCount: 1
+                }
+            };
+            db.update(project);
+            if (project.water_green == true) {
+                fazelab_form.fadeOut();
+                hot_col.fadeIn();
+                return;
+            }
             $('#select_brand').foundation('open');
             $('#selection_brand').on('click', function () {
                 project.brand_sewage = $('input[name=brand]:checked').val();
-                console.log(project.brand_sewage);
-                project.sewage_req = {
-                    bathroom: {
-                        riserCount: count_rizer_hamam,
-                        riserSize: $('#rizer_size_hamam option:selected').text(),
-                        siphonSize: $('#siphon_size_hamam option:selected').text(),
-                        toiletCount: $('#farangy_hamam option:selected').text() == 'دارد' ? 1 : 0,
-                        ventRiserSize: $('#rize_vant_size_hamam option:selected').text(),
-                        washclothCount: 0
-                    },
-                    kitchen: {
-                        dishWasherCount: 1,
-                        riserCount: count_rizer_kitchen,
-                        riserSize: $('#rizer_size_kitchen option:selected').text(),
-                        siphonSize: $('#rizer_size_siphon_kitchen option:selected').text(),
-                        ventRiserSize: $('#rizer_size_vant_kitchen option:selected').text(),
-                        washingMachineCount: 1
-                    },
-                    moshtarak: {
-                        countLineMouffe: line_mofe,
-                        countLineVisit: line_bazdyd
-                    },
-                    rainWater: {
-                        riserCount: count_water_rizer,
-                        riserSize: $('#rizer_size_water option:selected').text()
-                    },
-                    terrace: {
-                        siphonSize: siphon_size,
-                        riserCount: count_rizer_terace,
-                        riserSize: rizer_size_terace
-                    },
-                    toilet: {
-                        kafshoorSize: $('#select_Shoor option:selected').text(),
-                        riserCount: count_rizer_to,
-                        riserSize: 110,
-                        toiletCount: $('#farangy_to option:selected').text() == 'دارد' ? 1 : 0,
-                        ventRiserSize: $('#size_rize_to option:selected').text(),
-                        washclothCount: 1
-                    }
-                };
+                //console.log(project.brand_sewage);
                 db.update(project);
                 $.ajax({
                     type: 'POST',
@@ -1313,11 +1645,15 @@
                 });
             });
         });
+        // Fazelab Validation End
         $('.yellow').on('click', function () {
             main_mennu.slideUp();
             fazelab_form.slideDown();
         });
-
+        $('.orange').on('click', function () {
+            main_mennu.fadeOut();
+            hot_col.fadeIn();
+        });
         $('#main_menu #greens').on('click', function () {
             main_mennu.slideUp();
             create_project.slideDown();
@@ -1325,7 +1661,7 @@
         $('.slideup').on('click', function () {
             main_mennu.slideDown();
             create_project.slideUp();
-        })
+        });
         $('#main_menu #blue').on('click', function () {
             load_archive();
             main_mennu.slideUp();
@@ -1387,7 +1723,7 @@
         $('.hot_open').on('click', function () {
             part_menu_form.slideUp();
             hot_col.fadeIn();
-        })
+        });
         // Create Project
         $('#success').on('click', function () {
             var project_name = $('#project_name');
@@ -1410,7 +1746,11 @@
                 create_project.fadeOut();
             }
         });
-
+        // Heating Section
+        $('.heating_open').on('click', function () {
+            part_menu_form.fadeOut();
+            heating.fadeIn();
+        });
         //Date Picker Section
         $(document).ready(function () {
             $('.datepicker').persianDatepicker({
