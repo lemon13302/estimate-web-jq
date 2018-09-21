@@ -957,7 +957,7 @@
                                 date: project.date,
                                 brand: project['brand_' + part],
                                 data: JSON.stringify(factor_response),
-                                device: null
+                                device: "web",
                             },
                             beforeSend: function () {
                                 $('#show_modal').foundation('open');
@@ -1346,7 +1346,7 @@
                     }))
                         return;
                 }
-                project.water_req.rizerSize = $('#greens_rizer_size option:selected').text();
+                project.water_req = {riserSize: $('#greens_rizer_size option:selected').text(), levels: []};
                 $('#select_brand_sabz').foundation('open');
                 $('#selection_brand_sabz').on('click', function () {
                     project.brand_water = $('input[name=brand_sabz]:checked').val();
@@ -1362,15 +1362,16 @@
                             type: project.type,
                             general: JSON.stringify(project.general),
                             sewage_req: JSON.stringify(project.sewage_req),
-                            brand_sewage: project.brand_sewage,
-                            device: null,
+                            water_req: JSON.stringify(project.water_req),
+                            brand_water: project.brand_water,
+                            device: "",
                         },
                         beforeSend: function () {
                             $('#show_modal').foundation('open');
                         },
 
                         success: function (responseData) {
-                            project.sewage_res = responseData.results;
+                            project.water_res = responseData.results;
                             //  console.log(responseData);
                             db.update(project);
                             hot_col.fadeOut();
@@ -1411,7 +1412,7 @@
                         'inputPipe': $('#inputer_multi option:selected').text(),
                         'outputPipe': $('#output_multi option:selected').text(),
                     },
-                    null,null,null,null
+                    null, null, null, null
                 ];
                 modal_id.foundation('open');
                 if ($('#selection_brand_multi').on('click', function () {
@@ -1426,7 +1427,7 @@
                             name: project.name,
                             date: project.date,
                             type: project.type,
-                            general:JSON.stringify(project.general),
+                            general: JSON.stringify(project.general),
                             water_req: JSON.stringify(project.water_req),
                             brand_water: project.brand_water,
                             device: "",
