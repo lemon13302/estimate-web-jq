@@ -34,7 +34,6 @@ function DBM(pro_title) {
     //-------------------------
     this.read();
 }
-
 var Project = function () {
     this.water_green = false;
     this.id = null;
