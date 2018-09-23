@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en" dir="rtl">
+<html class="no-js" lang="fa" dir="rtl">
 <head>
     <title>وب اپ پایه</title>
     <meta charset="utf-8">
@@ -76,18 +76,15 @@
         </div>
         <!-- //end content -->
     </div>
+    <script>
+        function Main_Loader() {
+
+        }
+    </script>
 </div>
 <!--Create Project-->
 <div class="off-canvas-content" id="create_project" data-off-canvas-content style="display:none">
-    <div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="overlap">
-        <button class="close-button" aria-label="Close alert" type="button" data-close>
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <!-- //end sidebar -->
-
     <div class="off-canvas-content" data-off-canvas-content>
-
         <!-- content -->
         <div class="row columns">
             <div class="center_wrapper mb">
@@ -137,12 +134,15 @@
             </div>
             <!-- end tabs -->
         </div>
-
         <!-- //end content -->
 
     </div>
 
+    <script>
+        function Create_Loader() {
 
+        }
+    </script>
 </div>
 <!--General Form-->
 <div class="off-canvas-content mobile_wrapper" id="general_form" data-off-canvas-content style="display:none">
@@ -150,23 +150,32 @@
         <ul class="sidebar_menu menu vertical">
             <li>
                 <a href="" class="ripple-effect">
-                    <span class="material-icons">alarm</span>&nbsp;عنوان اول
+                    <span class="material-icons">alarm</span>&nbsp;بازگشت به خانه
                 </a>
             </li>
             <li>
                 <a href="" class="ripple-effect">
-                    <span class="material-icons">alarm</span>&nbsp;عنوان اول
+                    <span class="material-icons">alarm</span>&nbsp;آرشیو
                 </a>
             </li>
             <li>
                 <a href="" class="ripple-effect">
-                    <span class="material-icons">alarm</span>&nbsp;عنوان اول
+                    <span class="material-icons">alarm</span>&nbsp;نمایندگی ها
+                </a>
+            </li>
+            <li>
+                <a href="" class="ripple-effect">
+                    <span class="material-icons">alarm</span>&nbsp;تماس با ما
+                </a>
+            </li>
+            <li>
+                <a href="" class="ripple-effect">
+                    <span class="material-icons">alarm</span>&nbsp;درباره نرم افزار
                 </a>
             </li>
         </ul>
     </div>
     <!-- //end sidebar -->
-
     <div class="off-canvas-content" data-off-canvas-content>
         <div class="header main">
             <div class="top_row ">
@@ -184,7 +193,6 @@
                             </a>
                         </li>
                     </ul>
-
                 </div>
             </div>
         </div>
@@ -297,7 +305,6 @@
         </div>
         <!-- //end content -->
     </div>
-
     <!-- modal -->
     <div class="tiny reveal mb" id="exampleModal5" data-reveal>
         <div class="red_text mb">اخطار</div>
@@ -308,6 +315,11 @@
             </span>
         </div>
     </div>
+    <script>
+        function General_Loader() {
+
+        }
+    </script>
 </div>
 <!--Fazelab Form -->
 <div class="off-canvas-content mobile_wrapper" id="fazelab_form" style="display: none;" data-off-canvas-content>
@@ -331,7 +343,6 @@
                 </div>
             </div>
         </div>
-
         <!--  -->
         <div class="row columns mb fazelab_page">
             <div class="center_wrapper mb inline">
@@ -660,7 +671,11 @@
             <a href="" class="btn success_fazelab">تایید</a>
         </div>
     </div>
+    <script>
+        function Fazelab_Loader() {
 
+        }
+    </script>
 </div>
 <!--part_menu-->
 <div class="off-canvas-content mobile_wrapper" id="part_menu_form" data-off-canvas-content style="display:none">
@@ -732,6 +747,11 @@
             </div>
         </div>
     </div>
+    <script>
+        function Part_Menu_Loader() {
+
+        }
+    </script>
 </div>
 <!--Factor-->
 <div class="off-canvas-content mobile_wrapper" data-off-canvas-content style="display:none" id="factor">
@@ -888,6 +908,11 @@
             <a id="pdf_file" target="_blank" class="btn btn_2">PDF</a>
         </div>
     </div>
+    <script>
+        function Factor_Loader() {
+
+        }
+    </script>
 </div>
 <!--Archive Form-->
 <div class="off-canvas-content mobile_wrapper" id="Archive_form" data-off-canvas-content style="display:none">
@@ -933,6 +958,11 @@
             <!-- //end content -->
         </div>
     </div>
+    <script>
+        function Archive_Loader() {
+            load_archive();
+        }
+    </script>
 </div>
 <!--Heating-->
 <div class="off-canvas-content mobile_wrapper" data-off-canvas-content id="heating" style="display:none">
@@ -1223,6 +1253,11 @@
             <a href="" class="btn" id="heating_success">تایید</a>
         </div>
     </div>
+    <script>
+        function Heating_Loader() {
+
+        }
+    </script>
 </div>
 <!--Hot and Col-->
 <div class="off-canvas-content mobile_wrapper" data-off-canvas-content id="hot_col" style="display:none">
@@ -1541,6 +1576,11 @@
             <a href="" class="btn" id="hot_success">تایید</a>
         </div>
     </div>
+    <script>
+        function Hot_Loader() {
+
+        }
+    </script>
 </div>
 <!--Modal Section Error -->
 <div class="tiny reveal mb" id="modal_warning" data-reveal>
@@ -1653,7 +1693,6 @@
             </span>
         </div>
     </fieldset>
-
 </div>
 <!--Modal Section Select Brand Multi-->
 <div class="tiny reveal mb" id="select_brand_multi" data-reveal>
@@ -1681,7 +1720,6 @@
             </span>
         </div>
     </fieldset>
-
 </div>
 
 <!--Modal Selection Brand package-->
@@ -1740,16 +1778,6 @@
     window.project = new Project;
     window.db = new DBM("App");
     $(document).ready(function () {
-        var main_mennu = $('#main_menu');
-        var create_project = $('#create_project');
-        var general_form = $('#general_form');
-        var fazelab_form = $('#fazelab_form');
-        var Archive_form = $('#Archive_form');
-        var part_menu_form = $('#part_menu_form');
-        var hot_col = $('#hot_col');
-        var heating = $('#heating');
-        var factor = $('#factor');
-
         // Validation Hot
         $('#hot_success').on('click', function (e) {
             e.preventDefault();
@@ -1760,8 +1788,7 @@
                     $('#get_faz').foundation('open');
 
                     if ($('.get_fazelab').on('click', function () {
-                        hot_col.fadeOut();
-                        fazelab_form.fadeIn();
+                        Route_Page('fazelab_form');
                         project.water_green = true;
                         $('#get_faz').foundation('close');
                     }))
@@ -1790,13 +1817,11 @@
                         beforeSend: function () {
                             $('#show_modal').foundation('open');
                         },
-
                         success: function (responseData) {
                             project.water_res = responseData.results;
                             //  console.log(responseData);
                             db.update(project);
-                            hot_col.fadeOut();
-                            factor.fadeIn();
+                            Route_Page('factor');
                             factor_loader();
                         },
                         error: function (a) {
@@ -1876,8 +1901,7 @@
                             project.water_res = responseData.results;
                             //  console.log(responseData);
                             db.update(project);
-                            hot_col.fadeOut();
-                            factor.fadeIn();
+                            Route_Page('factor');
                             factor_loader();
                         },
                         error: function (a) {
@@ -1962,8 +1986,7 @@
                         project.package_res = responseData.results;
                         //  console.log(responseData);
                         db.update(project);
-                        heating.fadeOut();
-                        factor.fadeIn();
+                        Route_Page('factor');
                         factor_loader();
                     },
                     error: function (a) {
@@ -1994,6 +2017,8 @@
             $('[data-level-2-id=' + (level - 1) + '] .plus_adder').parent().css('display', 'inline');
             $('[data-level-2-id=' + (level - 1) + '] .close').css('display', 'block');
         });
+
+
         // Fazelab Validation Start
         $('.success_fazelab').on('click', function (e) {
             e.preventDefault();
@@ -2133,14 +2158,12 @@
             };
             db.update(project);
             if (project.water_green == true) {
-                fazelab_form.fadeOut();
-                hot_col.fadeIn();
+                Route_Page('hot_col');
                 return;
             }
             $('#select_brand').foundation('open');
             $('#selection_brand').on('click', function () {
                 project.brand_sewage = $('input[name=brand]:checked').val();
-                //console.log(project.brand_sewage);
                 db.update(project);
                 $.ajax({
                     type: 'POST',
@@ -2164,8 +2187,7 @@
                         project.sewage_res = responseData.results;
                         console.log(responseData);
                         db.update(project);
-                        fazelab_form.fadeOut();
-                        factor.fadeIn();
+                        Route_Page('factor');
                         factor_loader();
                     },
                     error: function (a) {
@@ -2177,48 +2199,44 @@
                     complete: function (a) {
                         $('#show_modal').foundation('close');
                     },
-
                 });
             });
         });
         // Fazelab Validation End
-        $('.yellow').on('click', function () {
-            main_mennu.fadeOut();
-            heating.fadeIn();
-        });
-        $('.orange').on('click', function () {
-            main_mennu.fadeOut();
-            hot_col.fadeIn();
-        });
+
+
         $('#main_menu #greens').on('click', function () {
-            main_mennu.slideUp();
-            create_project.slideDown();
+            Route_Page('create_project');
         });
+
         $('.slideup').on('click', function () {
-            main_mennu.slideDown();
-            create_project.slideUp();
+            Route_Page('main_menu');
         });
+
         $('#main_menu #blue').on('click', function () {
-            load_archive();
-            main_mennu.slideUp();
-            Archive_form.slideDown();
+            Route_Page('Archive_form');
         });
-        $('.white_menu_top').on('click', function () {
-            main_mennu.slideDown();
-            Archive_form.slideUp();
-        });
+
         $('.slideupgenral').on('click', function () {
-            create_project.slideDown();
-            general_form.slideUp();
+            Route_Page('create_project');
         });
+
         $('#back_general').on('click', function () {
-            part_menu_form.slideUp();
-            general_form.slideDown();
+            Route_Page('general_form');
         });
+
         $('#fazelab_back').on('click', function () {
-            fazelab_form.fadeOut();
-            part_menu_form.fadeIn();
+            Route_Page('part_menu_form');
         });
+
+        $('.fazelab_open').on('click', function () {
+            Route_Page('fazelab_form');
+        });
+
+        $('.hot_open').on('click', function () {
+            Route_Page('hot_col');
+        });
+
         $('.part_menu_open').on('click', function () {
             $('.parts_menu a').on('click', function () {
                 project.active_part = $(this).attr('data-id');
@@ -2249,24 +2267,13 @@
             }
             project.general = {floor: floors, parkingFloor: parking, unitInFloor: unit, unitTotal: total_unit};
             db.update(project);
-            general_form.slideUp();
-            part_menu_form.slideDown();
+            Route_Page('part_menu_form');
         });
-        $('.fazelab_open').on('click', function () {
-            part_menu_form.slideUp();
-            fazelab_form.slideDown();
-        });
-        $('.hot_open').on('click', function () {
-            part_menu_form.slideUp();
-            hot_col.fadeIn();
-        });
-        // Create Project
+        // Create Project Area Validation
         $('#success').on('click', function () {
             var project_name = $('#project_name');
             var date_project = $('#date_project');
             if (project_name.val() == '') {
-                /* $('.alertbox').text('لطفا نام پروژه را وارد کنید');
-                 $('.alertboxall').slideDown();*/
                 $('#modal_warning .title_error').text("نام پروژه را وارد نمایید");
                 $('#modal_warning').foundation('open');
                 return;
@@ -2278,15 +2285,15 @@
             }
             if (project_name.val() !== '' && date_project.val() !== '') {
                 db.add(window.project);
-                general_form.fadeIn();
-                create_project.fadeOut();
+                Route_Page('general_form');
             }
         });
         // Heating Section
         $('.heating_open').on('click', function () {
-            part_menu_form.fadeOut();
-            heating.fadeIn();
+            Route_Page('heating');
         });
+
+
         //Date Picker Section
         $(document).ready(function () {
             $('.datepicker').persianDatepicker({
@@ -2300,6 +2307,8 @@
                 }
             });
         });
+
+
         // On change IN tb
         $('#project_name').on('change', function () {
             window.project.name = this.value;
@@ -2323,7 +2332,6 @@
             var parent = $(this).parents(".form_counter");
             var result = parent.find("input.result").val();
             if (result > 0) {
-
                 result--;
                 parent.find("input.result").val(result);
             }

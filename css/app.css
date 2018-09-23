@@ -2462,6 +2462,10 @@ header
     cursor: pointer;
 }
 
-.custom{
+.custom {
     margin-top: 30px;
+}
+
+.fieldset {
+    height: 268px !important;
 }

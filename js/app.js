@@ -278,4 +278,65 @@ $('body').on('click', '.ripple-effect', function (e) {
 $('.owl-prev').addClass('mdi mdi-chevron-right').text('');
 $('.owl-next').addClass('mdi mdi-chevron-left').text('');
 
-$('.custom-text input').closest('.custom_select').click(function(e){$(e.target).find('input').focus();})
+$('.custom-text input').closest('.custom_select').click(function (e) {
+    $(e.target).find('input').focus();
+})
+window.current_page = $('#main_menu');
+
+function Route_Page(page_name) {
+    var page = '';
+    switch (page_name) {
+        case 'main_menu':
+            page = $('#main_menu');
+            Main_Loader();
+            break;
+
+        case 'create_project':
+            page = $('#create_project');
+            Create_Loader();
+            break;
+
+        case 'general_form':
+            page = $('#general_form');
+            General_Loader();
+            break;
+
+        case 'fazelab_form':
+            page = $('#fazelab_form');
+
+            Fazelab_Loader();
+            break;
+
+        case 'part_menu_form':
+            page = $('#part_menu_form');
+            Part_Menu_Loader();
+            break;
+
+        case 'Archive_form':
+            page = $('#Archive_form');
+            Archive_Loader();
+            break;
+
+        case 'heating':
+            page = $('#heating');
+            Heating_Loader();
+            break;
+
+        case 'hot_col':
+            page = $('#hot_col');
+            Hot_Loader();
+            break;
+
+        case 'factor':
+            page = $('#factor');
+            Factor_Loader();
+            break;
+
+    }
+   // console.log(current_page,page);
+    if (current_page !== null) {
+        current_page.fadeOut();
+    }
+    current_page = page;
+    current_page.fadeIn();
+}
