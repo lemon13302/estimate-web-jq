@@ -145,8 +145,6 @@ function closeAllSelect(elmnt) {
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 // ==================================
-
-
 /**
  * Ripple effect mechanism
  */
@@ -274,7 +272,6 @@ $('body').on('click', '.ripple-effect', function (e) {
 });
 //   ====== end ripple effect
 
-
 $('.owl-prev').addClass('mdi mdi-chevron-right').text('');
 $('.owl-next').addClass('mdi mdi-chevron-left').text('');
 
@@ -283,14 +280,40 @@ $('.custom-text input').closest('.custom_select').click(function (e) {
 })
 window.current_page = $('#main_menu');
 
+window.header = $('#header');
+window.gap = $('#gap');
+window.back = header.find('#back');
+window.title = header.find('#title');
+
+
+function handel_header(back_page, page_title) {
+    back.attr('data-page', back_page);
+    title.text(page_title);
+    header.css('display', 'block');
+    gap.css('display', 'block');
+}
+
+function hide_header() {
+    header.css('display', 'none');
+    gap.css('display', 'none');
+}
+
+$('#back').on('click', function (e) {
+    e.preventDefault();
+    var page_name = '';
+    console.log(e.target);
+    if (e.target.tagName == 'A') {
+        page_name = $(e.target).attr('data-page');
+    }
+    else {
+        page_name = $(e.target).closest('a').attr('data-page');
+    }
+    Route_Page(page_name);
+});
+
 function Route_Page(page_name) {
     var page = '';
     switch (page_name) {
-        case 'main_menu':
-            page = $('#main_menu');
-            Main_Loader();
-            break;
-
         case 'create_project':
             page = $('#create_project');
             Create_Loader();
@@ -303,7 +326,6 @@ function Route_Page(page_name) {
 
         case 'fazelab_form':
             page = $('#fazelab_form');
-
             Fazelab_Loader();
             break;
 
@@ -331,9 +353,13 @@ function Route_Page(page_name) {
             page = $('#factor');
             Factor_Loader();
             break;
+        default:
+            page = $('#main_menu');
+            Main_Loader();
+            break;
 
     }
-   // console.log(current_page,page);
+    // console.log(current_page,page);
     if (current_page !== null) {
         current_page.fadeOut();
     }

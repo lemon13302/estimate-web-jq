@@ -15,6 +15,27 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<!--Header Section-->
+<div id="header" class="header main" style="display:none">
+    <div class="top_row ">
+        <div class="row columns">
+            <ul class="space-between ">
+                <li>
+                    <a data-toggle="offCanvas">
+                        <i class="menu_open_close material-icons md-24">menu</i>
+                    </a>
+                </li>
+                <li class="parts head_text" id="title">پروژه الهیه</li>
+                <li>
+                    <a data-page="" id="back">
+                        <i class="material-icons md-24">arrow_back</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="gap"></div>
 <!--Main Menu Section-->
 <div class="off-canvas-content" id="main_menu" data-off-canvas-content>
     <!-- content -->
@@ -78,7 +99,7 @@
     </div>
     <script>
         function Main_Loader() {
-
+            hide_header();
         }
     </script>
 </div>
@@ -140,7 +161,7 @@
 
     <script>
         function Create_Loader() {
-
+            hide_header();
         }
     </script>
 </div>
@@ -177,26 +198,6 @@
     </div>
     <!-- //end sidebar -->
     <div class="off-canvas-content" data-off-canvas-content>
-        <div class="header main">
-            <div class="top_row ">
-                <div class="row columns">
-                    <ul class="space-between ">
-                        <li>
-                            <a data-toggle="offCanvas">
-                                <i class="menu_open_close material-icons md-24">menu</i>
-                            </a>
-                        </li>
-                        <li class="parts head_text">پروژه الهیه</li>
-                        <li>
-                            <a>
-                                <i class="material-icons md-24 slideupgenral">arrow_back</i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- content -->
         <div class="row columns GeneralForm">
             <table class="order_number">
                 <tbody>
@@ -317,33 +318,13 @@
     </div>
     <script>
         function General_Loader() {
-
+            handel_header('Archive_form', project.name);
         }
     </script>
 </div>
 <!--Fazelab Form -->
 <div class="off-canvas-content mobile_wrapper" id="fazelab_form" style="display: none;" data-off-canvas-content>
     <div class="page_bottomBar">
-        <div class="header main">
-            <div class="top_row">
-                <div class="row columns">
-                    <ul class="space-between">
-                        <li>
-                            <a href="">
-                                <i class="material-icons md-24">menu</i>
-                            </a>
-                        </li>
-                        <li class="parts head_text">پروژه الهیه</li>
-                        <li>
-                            <a href="">
-                                <i class="material-icons md-24">arrow_back</i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--  -->
         <div class="row columns mb fazelab_page">
             <div class="center_wrapper mb inline">
                 <div class="flex_main_menu mb">
@@ -673,7 +654,7 @@
     </div>
     <script>
         function Fazelab_Loader() {
-
+            handel_header('part_menu_form', project.name);
         }
     </script>
 </div>
@@ -700,27 +681,6 @@
     </div>
     <!-- //end sidebar -->
     <div class="off-canvas-content " data-off-canvas-content>
-        <div class="header main mb">
-            <div class="top_row ">
-                <div class="row columns ">
-                    <ul class="space-between ">
-                        <li>
-                            <a data-toggle="offCanvas">
-                                <i class="material-icons md-24 ">menu</i>
-                            </a>
-                        </li>
-                        <li class="parts head_text "> آرشیو</li>
-                        <li>
-                            <a href="#">
-                                <i class="material-icons md-24" id="back_general">arrow_back</i>
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-        </div>
-        <!-- parts_menu -->
         <div class="row columns ">
             <div class="parts_menu">
                 <!-- start item -->
@@ -749,31 +709,13 @@
     </div>
     <script>
         function Part_Menu_Loader() {
-
+            handel_header('general_form', project.name);
         }
     </script>
 </div>
 <!--Factor-->
 <div class="off-canvas-content mobile_wrapper" data-off-canvas-content style="display:none" id="factor">
     <div class="page_bottomBar">
-        <div class="header main">
-            <div class="top_row">
-                <div class="row columns">
-                    <ul class="space-between">
-                        <li>
-                            <a data-toggle="offCanvas"><i class="material-icons md-24">menu</i></a>
-                        </li>
-                        <li class="parts head_text">پروژه الهیه</li>
-                        <li>
-                            <a href=""><i class="material-icons md-24">arrow_back</i></a>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-        </div>
-
-        <!--  -->
         <div class="row columns mt_defualt">
             <table class="factor_table factor_print_top">
                 <tbody>
@@ -917,18 +859,6 @@
 <!--Archive Form-->
 <div class="off-canvas-content mobile_wrapper" id="Archive_form" data-off-canvas-content style="display:none">
     <div class="off-canvas-content" data-off-canvas-content>
-        <div class="header main">
-            <div class="top_row">
-                <div class="row columns">
-                    <ul class="space-between">
-                        <li></li>
-                        <li class="parts head_text">آرشیو</li>
-                        <li><a class="white_menu_top"><i class="material-icons md-24">arrow_back</i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- content -->
         <div class="row columns">
             <table class="archives">
                 <tbody id="a_tbody">
@@ -961,32 +891,13 @@
     <script>
         function Archive_Loader() {
             load_archive();
+            handel_header('main_menu', 'آرشیو');
         }
     </script>
 </div>
 <!--Heating-->
 <div class="off-canvas-content mobile_wrapper" data-off-canvas-content id="heating" style="display:none">
     <div class="page_bottomBar">
-        <div class="header main">
-            <div class="top_row">
-                <div class="row columns">
-                    <ul class="space-between">
-                        <li>
-                            <a data-toggle="offCanvas">
-                                <i class="material-icons">menu</i>
-                            </a>
-                        </li>
-                        <li class="parts head_text">پروژه الهیه</li>
-                        <li>
-                            <a href="">
-                                <i class="material-icons">arrow_back</i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--  -->
         <div class="row columns mb fazelab_page">
             <div class="center_wrapper mb inline">
                 <div class="flex_main_menu mb">
@@ -1047,7 +958,7 @@
                             <div class="row column center_wrapper">
                                 <div class="large-10 float-center add_box">
                               <span class="pluss">
-                                  <i class="plus_adder">&times;</i>
+                              <i class="material-icons plus_adder">add</i>
                               </span>
                                 </div>
                             </div>
@@ -1097,7 +1008,7 @@
                             <div class="row column center_wrapper">
                                 <div class="large-10 float-center add_box">
                               <span class="pluss">
-                                  <i class="plus_adder">&times;</i>
+                                 <i class="material-icons plus_adder">add</i>
                               </span>
                                 </div>
                             </div>
@@ -1147,7 +1058,7 @@
                             <div class="row column center_wrapper">
                                 <div class="large-10 float-center add_box">
                               <span class="pluss">
-                                  <i class="plus_adder">&times;</i>
+                                <i class="material-icons plus_adder">add</i>
                               </span>
                                 </div>
                             </div>
@@ -1197,7 +1108,7 @@
                             <div class="row column center_wrapper">
                                 <div class="large-10 float-center add_box">
                               <span class="pluss">
-                                  <i class="plus_adder">&times;</i>
+                                 <i class="material-icons plus_adder">add</i>
                               </span>
                                 </div>
                             </div>
@@ -1255,33 +1166,13 @@
     </div>
     <script>
         function Heating_Loader() {
-
+            handel_header('part_menu_form', project.name);
         }
     </script>
 </div>
 <!--Hot and Col-->
 <div class="off-canvas-content mobile_wrapper" data-off-canvas-content id="hot_col" style="display:none">
     <div class="page_bottomBar">
-        <div class="header main">
-            <div class="top_row">
-                <div class="row columns">
-                    <ul class="space-between">
-                        <li>
-                            <a data-toggle="offCanvas">
-                                <i class="material-icons">menu</i>
-                            </a>
-                        </li>
-                        <li class="parts head_text">پروژه الهیه</li>
-                        <li>
-                            <a href="">
-                                <i class="material-icons">arrow_back</i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--  -->
         <div class="row columns mb fazelab_page">
             <div class="center_wrapper mb inline">
                 <div class="flex_main_menu mb">
@@ -1370,7 +1261,7 @@
                             <div class="row column center_wrapper">
                                 <div class="large-10 float-center add_box">
                               <span class="pluss">
-                                  <i class="plus_adder">&times;</i>
+                                 <i class="material-icons plus_adder">add</i>
                               </span>
                                 </div>
                             </div>
@@ -1470,7 +1361,7 @@
                             <div class="row column center_wrapper">
                                 <div class="large-10 float-center add_box">
                               <span class="pluss">
-                                  <i class="plus_adder">&times;</i>
+                               <i class="material-icons plus_adder">add</i>
                               </span>
                                 </div>
                             </div>
@@ -1520,7 +1411,7 @@
                             <div class="row column center_wrapper">
                                 <div class="large-10 float-center add_box">
                               <span class="pluss">
-                                  <i class="plus_adder">&times;</i>
+                                 <i class="material-icons plus_adder">add</i>
                               </span>
                                 </div>
                             </div>
@@ -1578,7 +1469,7 @@
     </div>
     <script>
         function Hot_Loader() {
-
+            handel_header('part_menu_form', project.name);
         }
     </script>
 </div>
@@ -1721,7 +1612,6 @@
         </div>
     </fieldset>
 </div>
-
 <!--Modal Selection Brand package-->
 <div class="tiny reveal mb" id="select_brand_package" data-reveal>
     <div class="red_text mb">انتخاب برند</div>
