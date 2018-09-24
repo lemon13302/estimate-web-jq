@@ -2477,3 +2477,71 @@ header
 .canvas-img{
     width: 30px;
 }
+
+.calc .container {
+    background-color: #363f3d;
+}
+
+.calc #display {
+    background: inherit;
+    border: none;
+    color: white;
+    display: block;
+    height: 42px;
+    padding: 0 10px;
+    box-shadow: none;
+    text-align: right;
+}
+
+.calc .button {
+    display: block !important;
+    font-weight: bold;
+    border-radius: 100%;
+    width: 100%;
+    height: 0;
+    padding: 50% 0;
+}
+
+.calc .mathButtons {
+    color: #FFF;
+    background-color: #1abc9c;
+}
+
+.calc .digits {
+    color: #c2c2c2;
+    background-color: #495351;
+}
+
+/* .calc .digits:hover,
+.calc .mathButtons:hover,
+.calc #backButton,
+.calc #clearButton:hover {
+    background-color: #FFBA75;
+    box-shadow: 0px 0px 2px #FFBA75, inset 0px -20px 1px #FF8000;
+    border-top: 2px solid #FFF;
+    border-right: 2px solid #FFF;
+    border-bottom: 2px solid #AE5700;
+    border-left: 2px solid #AE5700;
+} */
+
+.calc #backButton,
+.calc #clearButton {
+    background-color: #c2c2c2;
+}
+
+.calc .custom_btn {
+    padding: 50% 0;
+}
+
+.calc .wrapper_equal {
+    position: absolute;
+}
+
+.calc .equal {
+    position: relative;
+}
+
+.calc .header{
+    position: initial;
+    background-color: #363f3d;
+}
